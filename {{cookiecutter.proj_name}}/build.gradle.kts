@@ -21,9 +21,6 @@ group                      = "org.jacamo"
 
 defaultTasks("run")
 
-// can be used like implementation("...") : exampleConfig("...")
-// val exampleConfig by configurations.creating {}
-// apply ".jcm-deps.gradle" // this file contains dependencies declared in the .jcm files
 
 ////-- dependencies
 java {
@@ -55,14 +52,17 @@ dependencies {
 sourceSets {
     main {
         java {
-            srcDir("src/kt_{{cookiecutter.proj_name}}/environments")
-            srcDir("src/kt_{{cookiecutter.proj_name}}/agents")
-            srcDir("src/kt_{{cookiecutter.proj_name}}/organisations")
             srcDir("src/kt_{{cookiecutter.proj_name}}/kotlin")
-            srcDir("src/kt_{{cookiecutter.proj_name}}/_configs")
+            srcDir("src/kt_{{cookiecutter.proj_name}}/java")
+
         }
         resources {
             srcDir("src/_data")
+            srcDir("src/kt_{{cookiecutter.proj_name}}")
+            srcDir("src/kt_{{cookiecutter.proj_name}}/_configs")
+            srcDir("src/kt_{{cookiecutter.proj_name}}/agts")
+            srcDir("src/kt_{{cookiecutter.proj_name}}/environments")
+            srcDir("src/kt_{{cookiecutter.proj_name}}/organisations")
         }
     }
 }
@@ -87,7 +87,7 @@ tasks.register<JavaExec>("run") {
     group = "JaCaMo"
     description = "runs the JaCaMo application"
     mainClass.set("jacamo.infra.JaCaMoLauncher")
-    args("src/kt_{{cookiecutter.proj_name}}/_configs/{{cookiecutter.proj_name}}.jcm")
+    args("src/kt_{{cookiecutter.proj_name}}/{{cookiecutter.proj_name}}.jcm", "--log-conf", "src/kt_{{cookiecutter.proj_name}}/_configs/logging.properties")
     // jvmArgs = "-Xss15m"
     classpath = sourceSets["main"].runtimeClasspath
     // classpath.set(sourceSets.get("main").getRuntimeClasspath())
@@ -99,7 +99,7 @@ tasks.register<JavaExec>("run") {
 tasks.register<JavaExec>("buildJCMDeps") {
     dependsOn("classes")
     mainClass.set("jacamo.infra.RunJaCaMoProject")
-    args("src/kt_{{cookiecutter.proj_name}}/_configs/{{cookiecutter.proj_name}}.jcm", "--deps")
+    args("src/kt_{{cookiecutter.proj_name}}/{{cookiecutter.proj_name}}.jcm", "--deps")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
@@ -107,7 +107,7 @@ tasks.jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     archiveBaseName.set(project.name)
 
-    from (project.projectDir.absolutePath + "/src") {
+    from (project.projectDir.absolutePath + "/src/kt_{{cookiecutter.proj_name}}") {
         include("**/*.asl")
         include("**/*.xml")
         include("**/*.sai")
@@ -135,7 +135,7 @@ tasks.register<Jar>("uberJar") {
     from({
              configurations.runtimeClasspath.get().filter {it.name.endsWith("jar") }.map { zipTree(it) }
          })
-    from (project.projectDir.absolutePath) {
+    from (project.projectDir.absolutePath + "/src/kt_{{cookiecutter.proj_name}}") {
         include("**/*.asl")
         include("**/*.xml")
         include("**/*.sai")
@@ -150,8 +150,8 @@ tasks.register<Jar>("uberJar") {
 
     doFirst {
         copy {
-            from( "src/kt_{{cookiecutter.proj_name}}/_configs/{{cookiecutter.proj_name}}.jcm" )
-            rename( "{{cookiecutter.proj_name}}.jcm","default.jcm" )
+            from("src/kt_{{cookiecutter.proj_name}}/{{cookiecutter.proj_name}}.jcm" )
+            rename("{{cookiecutter.proj_name}}.jcm","default.jcm" )
             into( project.buildDir.absolutePath + "/jcm" )
         }
     }
@@ -169,11 +169,14 @@ tasks.register("testJaCaMo") {
             javaexec {
                 mainClass.set("jacamo.infra.JaCaMoLauncher")
                 if (gradle.startParameter.logLevel.toString().equals("DEBUG")) {
-                    args("src/kt_{{cookiecutter.proj_name}}/tests/tests.jcm", "--log-conf", "jason/templates/console-debug-logging.properties")
+                    args("src/kt_{{cookiecutter.proj_name}}/tests/tests.jcm",
+                         "--log-conf", "src/kt_{{cookiecutter.proj_name}}/_condigs/logging.properties")
                 } else if (gradle.startParameter.logLevel.toString().equals("INFO")) {
-                    args("src/kt_{{cookiecutter.proj_name}}/tests/tests.jcm", "--log-conf", "jason/templates/console-info-logging.properties")
+                    args("src/kt_{{cookiecutter.proj_name}}/tests/tests.jcm",
+                         "--log-conf", "src/kt_{{cookiecutter.proj_name}}/_configs/logging.properties")
                 } else {
-                    args("src/kt_{{cookiecutter.proj_name}}/tests/tests.jcm", "--log-conf", "jason/templates/console-lifecycle-logging.properties")
+                    args("src/kt_{{cookiecutter.proj_name}}/tests/tests.jcm",
+                        "--log-conf", "src/kt_{{cookiecutter.proj_name}}/_configs/logging.properties")
                 }
                 classpath = sourceSets.main.get().runtimeClasspath
                 
