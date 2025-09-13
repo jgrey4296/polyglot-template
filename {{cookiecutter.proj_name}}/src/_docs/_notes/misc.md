@@ -14,8 +14,6 @@
 
 # .temp dir
 
-# version control
-
 # .lenvs
 
 # .related
