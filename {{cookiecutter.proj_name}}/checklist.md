@@ -41,3 +41,5 @@
     - [ ] release script
 - [ ] related
     - [ ] wiki
+- [ ] setup
+    - [ ] cargo install-dotnet
