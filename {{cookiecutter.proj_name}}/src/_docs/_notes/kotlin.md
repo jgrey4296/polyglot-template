@@ -7,7 +7,8 @@
 # Kotlin-lsp
 
 
-# Gradle
+# [Gradle](https://docs.gradle.org/current/kotlin-dsl/index.html)
+https://docs.gradle.org/current/userguide/kotlin_dsl.html
 
 ## build.gradle.kts
 

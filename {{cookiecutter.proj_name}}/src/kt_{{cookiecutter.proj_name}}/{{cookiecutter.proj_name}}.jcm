@@ -13,7 +13,7 @@
     JaCaMo 1.2
 */
 
-mas blah {
+mas {{cookiecutter.proj_name}} {
     agent bob  {
         focus: w.c1 
         roles: role1 in g1
@@ -33,15 +33,12 @@ mas blah {
       group g1 : group1 
     }
 
-    asl-path: .
-              src/kt_{{cookiecutter.proj_name}}/agts // can't be called 'agents'
+    asl-path: ./agts // can't be called 'agents'
 
-    org-path: .
-              src/kt_{{cookiecutter.proj_name}}/organisations
+    org-path: ./organisations
 
-    java-path: .
-               src/kt_{{cookiecutter.proj_name}}/java
-               src/kt_{{cookiecutter.proj_name}}/kotlin
+    java-path: ./java
+               ./kotlin
 
 
 }

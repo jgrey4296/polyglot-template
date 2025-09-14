@@ -1,233 +1,44 @@
+//  build.gradle.kts -*- mode: Kotlin -*-
 /*
  {{cookiecutter.proj_name}}
 
  Gradle build file for JaCaMo Applications
  October 18, 2023 - 00:59:47
-*/
-import java.io.ByteArrayOutputStream
 
+ https://docs.gradle.org/current/kotlin-dsl/
+ https://docs.gradle.org/current/userguide/kotlin_dsl.html
+
+ Compiled during *configuration phase*.
+
+ Blocks:
+ - artifacts
+ - ConfigurationContainer
+ - dependencies
+ - dependencies.constraints
+ - plugins
+ - buildscript
+ - tasks
+ -
+
+
+
+*/
 
 ////-- plugins
 plugins {
-    java
+    id("java")
     id("maven-publish")
-    id("org.jetbrains.kotlin.jvm") version "1.9.10"
+    id("org.jetbrains.kotlin.jvm").version("1.9.10")
 }
 
 ////-- end plugins
 
-version                    = "1.0"
-group                      = "org.jacamo"
+apply(from=".tasks/jg.gradle.kts")
 
-defaultTasks("run")
+defaultTasks(":kt_{{cookiecutter.proj_name}}:run")
 
-
-////-- dependencies
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
-    }
-}
-
-repositories {
-    mavenCentral()
-    maven("https://raw.githubusercontent.com/jacamo-lang/mvn-repo/master")
-    maven("https://repo.gradle.org/gradle/libs-releases")
-    maven("https://jitpack.io")
-    //maven url: "http://jacamo.sourceforge.net/maven2"
-    //maven url: "https://jade.tilab.com/maven/"
-
-    flatDir(Pair("dirs",  listOf("lib")))
-
-}
-
-
-dependencies {
-    implementation("org.jacamo:jacamo:1.2")
-}
-
-////-- end dependencies
-
-////-- source sets
-sourceSets {
-    main {
-        java {
-            srcDir("src/kt_{{cookiecutter.proj_name}}/kotlin")
-            srcDir("src/kt_{{cookiecutter.proj_name}}/java")
-
-        }
-        resources {
-            srcDir("src/_data")
-            srcDir("src/kt_{{cookiecutter.proj_name}}")
-            srcDir("src/kt_{{cookiecutter.proj_name}}/_configs")
-            srcDir("src/kt_{{cookiecutter.proj_name}}/agts")
-            srcDir("src/kt_{{cookiecutter.proj_name}}/environments")
-            srcDir("src/kt_{{cookiecutter.proj_name}}/organisations")
-        }
-    }
-}
-
-////-- end source sets
-
-////-- publishing
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from( components["java"] )
-        }
-    }
-}
-
-////-- end publishing
-
-// //  --------------------------------------------------
-// Tasks
-tasks.register<JavaExec>("run") {
-    dependsOn("classes")
-    group = "JaCaMo"
-    description = "runs the JaCaMo application"
-    mainClass.set("jacamo.infra.JaCaMoLauncher")
-    args("src/kt_{{cookiecutter.proj_name}}/{{cookiecutter.proj_name}}.jcm", "--log-conf", "src/kt_{{cookiecutter.proj_name}}/_configs/logging.properties")
-    // jvmArgs = "-Xss15m"
-    classpath = sourceSets["main"].runtimeClasspath
-    // classpath.set(sourceSets.get("main").getRuntimeClasspath())
-    doFirst {
-        mkdir(".temp/log")
-    }
-}
-
-tasks.register<JavaExec>("buildJCMDeps") {
-    dependsOn("classes")
-    mainClass.set("jacamo.infra.RunJaCaMoProject")
-    args("src/kt_{{cookiecutter.proj_name}}/{{cookiecutter.proj_name}}.jcm", "--deps")
-    classpath = sourceSets["main"].runtimeClasspath
-}
-
-tasks.jar {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    archiveBaseName.set(project.name)
-
-    from (project.projectDir.absolutePath + "/src/kt_{{cookiecutter.proj_name}}") {
-        include("**/*.asl")
-        include("**/*.xml")
-        include("**/*.sai")
-        include("**/*.ptl")
-        include("**/*.jcm")
-        exclude("tests")
-    }
-    from (project.buildDir.absolutePath + "/classes") {
-        include("**/*")
-    }
-}
-
-tasks.register<Jar>("uberJar") {
-    dependsOn("classes")
-    group              = "JaCaMo"
-    description        = "creates a single runnable jar file with all dependencies"
-    archiveClassifier.set("uber")
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    archiveBaseName.set("jacamo-{{cookiecutter.proj_name}}") // the name must start with jacamo so that jacamo...jar is found in the classpath
-    manifest {
-        attributes( mapOf( "Main-Class" to "jacamo.infra.JaCaMoLauncher" ) )
-        }
-    
-    from(sourceSets.main.get().output)
-    from({
-             configurations.runtimeClasspath.get().filter {it.name.endsWith("jar") }.map { zipTree(it) }
-         })
-    from (project.projectDir.absolutePath + "/src/kt_{{cookiecutter.proj_name}}") {
-        include("**/*.asl")
-        include("**/*.xml")
-        include("**/*.sai")
-        include("**/*.ptl")
-        include("**/*.jcm")
-        include("*.properties")
-    }
-    from (project.buildDir.absolutePath + "/jcm") {
-        include( "**/*" )
-    }
-    
-
-    doFirst {
-        copy {
-            from("src/kt_{{cookiecutter.proj_name}}/{{cookiecutter.proj_name}}.jcm" )
-            rename("{{cookiecutter.proj_name}}.jcm","default.jcm" )
-            into( project.buildDir.absolutePath + "/jcm" )
-        }
-    }
-}
-
-tasks.register("testJaCaMo") {
-    description      = "runs JaCaMo unit tests"
-    var errorOnTests = false
-    outputs.upToDateWhen { false } // disable cache
-    var stdout = ByteArrayOutputStream()
-    var errout = ByteArrayOutputStream()
-    
-    doFirst {
-        try {
-            javaexec {
-                mainClass.set("jacamo.infra.JaCaMoLauncher")
-                if (gradle.startParameter.logLevel.toString().equals("DEBUG")) {
-                    args("src/kt_{{cookiecutter.proj_name}}/tests/tests.jcm",
-                         "--log-conf", "src/kt_{{cookiecutter.proj_name}}/_condigs/logging.properties")
-                } else if (gradle.startParameter.logLevel.toString().equals("INFO")) {
-                    args("src/kt_{{cookiecutter.proj_name}}/tests/tests.jcm",
-                         "--log-conf", "src/kt_{{cookiecutter.proj_name}}/_configs/logging.properties")
-                } else {
-                    args("src/kt_{{cookiecutter.proj_name}}/tests/tests.jcm",
-                        "--log-conf", "src/kt_{{cookiecutter.proj_name}}/_configs/logging.properties")
-                }
-                classpath = sourceSets.main.get().runtimeClasspath
-                
-                standardOutput = stdout
-                errorOutput    = errout
-            }
-        } catch (e : Exception) {
-            errorOnTests = true
-        }
-    }
-
-    doLast {
-        // val styler = "black red green yellow blue magenta cyan white"
-        //     .split(" ")
-        //     .withIndex()
-        //     .associate { (key, value) -> Pair(key, { it : String -> "\\033[${value}m${it}\\033[0m" }) }
-
-        stdout.toString().lines().map  { line ->
-            println(line)
-            // println(line.replace("TESTING","${styler["yellow"]("TESTING")}")
-            //             .replace("PASSED","${styler["green"]("PASSED")}")
-            //             .replace("FAILED","${styler["red"]("FAILED")}")
-            //             .replace("TODO","${styler["magenta"]("TODO")}")
-            //             .replace("LAUNCHING","${styler["blue"]("LAUNCHING")}")
-            // )
-        }
-
-        errout.toString().lines().map { line ->
-            println(line)
-            // println(line.replace("TESTING","${styler["yellow"]("TESTING")}")
-            //             .replace("PASSED","${styler["green"]("PASSED")}")
-            //             .replace("FAILED","${styler["red"]("FAILED")}")
-            //             .replace("TODO","${styler["magenta"]("TODO")}")
-            //             .replace("LAUNCHING","${styler["blue"]("LAUNCHING")}")
-            // )
-        }
-
-        if (errorOnTests) {
-            throw GradleException("JaCaMo unit tests: ERROR!")
-        }
-    }
-}
-
-tasks.test {
-    finalizedBy("testJaCaMo")
-}
+buildDir = File(".temp/kotlin")
 
 tasks.clean {
-    delete(".temp")
-    delete("bin")
-    delete("build")
-    delete("log")
+    delete(buildDir)
 }
-

@@ -1,4 +1,4 @@
-# #  blah.ex -*- mode: elixir -*-
+# {{cookiecutter.proj_name}}.ex -*- mode: elixir -*-
 
 defmodule {{cookiecutter.proj_name|title}} do
   @moduledoc """
