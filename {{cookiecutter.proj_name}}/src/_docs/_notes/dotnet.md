@@ -1,8 +1,9 @@
 ## dotnet.md -*- mode: gfm-mode -*-
-# Summary:
-#
-# Tags:
-#
+<!--
+Summary:
+
+Tags:
+-->
 
 
 # Dotnet

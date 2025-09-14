@@ -1,7 +1,8 @@
-## prolog.md -*- mode: fundamental-mode -*-
-# Summary:
-#
-# Tags:
-#
+## prolog.md -*- mode: gfm-mode -*-
+<!--
+Summary:
+
+Tags:
+-->
 
 # Swipl

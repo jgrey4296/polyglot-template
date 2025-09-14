@@ -1,8 +1,9 @@
 ## rocq.md -*- mode: gfm-mode -*-
-# Summary:
-#
-# Tags:
-#
+<!--
+Summary:
+
+Tags:
+-->
 
 # _CoqProject
 

@@ -53,11 +53,12 @@ pyo3         = "0.22.0"
 
 [workspace.dev-dependencies]
 flamegraph         = "0.6.9"
-cargo-autoinherit  = "0.1.6"
-cargo-valgrind     = "2.3.2"
-version-manager    = "3.0.0"
 maturin            = "1.9.4"
 mdbook             = "0.4.52"
+version-manager    = "3.0.0"
+cargo-autoinherit  = "0.1.6"
+cargo-valgrind     = "2.3.2"
+cargo-expand       = "1.0.116"
 
 [workspace.build-dependencies]
 bindgen  = "0.72.1"

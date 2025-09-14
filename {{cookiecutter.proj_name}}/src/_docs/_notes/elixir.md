@@ -1,8 +1,9 @@
 ## elixir.md -*- mode: gfm-mode -*-
-# Summary:
-#
-# Tags:
-#
+<!--
+Summary:
+
+Tags:
+-->
 
 # Mix
 

@@ -1,8 +1,9 @@
 ## tasks.md -*- mode: gfm-mode -*-
-# Summary:
-#
-# Tags:
-#
+<!--
+Summary:
+
+Tags:
+-->
 
 # Local
 
@@ -10,6 +11,11 @@
 
 ## cargo-do-release
 
+## cargo-install-dotnet
+
+## x.gradle.kts
+
 # tox
 
 # .github workflow
+

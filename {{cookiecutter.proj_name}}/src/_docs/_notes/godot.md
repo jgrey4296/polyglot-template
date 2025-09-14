@@ -1,7 +1,8 @@
 ## godot.md -*- mode: gfm-mode -*-
-# Summary:
-#
-# Tags:
-#
+<!--
+Summary:
+
+Tags:
+-->
 
 # project.godot

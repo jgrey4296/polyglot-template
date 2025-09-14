@@ -1,4 +1,5 @@
-<!-- <!--  overview.md -*- mode: GFM -*- --> -->
+<!--  overview.md -*- mode: GFM -*- -->
+
 # Overview
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit
