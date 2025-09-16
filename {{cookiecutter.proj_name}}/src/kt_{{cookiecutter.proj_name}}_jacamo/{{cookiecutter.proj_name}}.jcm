@@ -17,11 +17,13 @@ mas {{cookiecutter.proj_name}} {
     agent bob  {
         focus: w.c1 
         roles: role1 in g1
+        beliefs:
     }
 
     agent bill {
         focus: w.c1
         roles: role2 in g1
+        beliefs:
     }   
 
     workspace w {
@@ -33,12 +35,14 @@ mas {{cookiecutter.proj_name}} {
       group g1 : group1 
     }
 
-    asl-path: ./agts // can't be called 'agents'
+    asl-path: "."
+              "./agents"
 
-    org-path: ./organisations
+    org-path: "."
+              "./organisations"
 
-    java-path: ./java
-               ./kotlin
+    java-path: "./java"
+               "./kotlin"
 
 
 }

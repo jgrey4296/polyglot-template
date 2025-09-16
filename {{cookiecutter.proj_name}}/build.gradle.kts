@@ -29,16 +29,19 @@ plugins {
     id("java")
     id("maven-publish")
     id("org.jetbrains.kotlin.jvm").version("1.9.10")
+    id("com.android.application").version("8..13..0")
+    id("com.android.library").version("8.13.0")
+    id("org.jetbrains.kotlin.android").version("2.1.20")
 }
 
 ////-- end plugins
 
 apply(from=".tasks/jg.gradle.kts")
 
-defaultTasks(":kt_{{cookiecutter.proj_name}}:run")
+// defaultTasks(":kt_{{cookiecutter.proj_name}}:run")
 
-buildDir = File(".temp/kotlin")
+layout.buildDirectory = File(".temp/kotlin")
 
 tasks.clean {
-    delete(buildDir)
+    delete(layout.buildDirectory)
 }
