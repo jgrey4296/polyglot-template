@@ -59,10 +59,11 @@ version-manager    = "3.0.0"
 cargo-autoinherit  = "0.1.6"
 cargo-valgrind     = "2.3.2"
 cargo-expand       = "1.0.116"
+cargo-with         = "0.3.2"
 
 [workspace.build-dependencies]
-bindgen  = "0.72.1"
-cc       = "1.2.36"
+bindgen            = "0.72.1"
+cc                 = "1.2.36"
 
 [patch.crates-io]
 
