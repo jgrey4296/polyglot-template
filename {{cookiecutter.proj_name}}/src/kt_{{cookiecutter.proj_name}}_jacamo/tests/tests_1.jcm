@@ -1,6 +1,6 @@
+//// tests.jcm -*- mode: jacamo -*-
 // JaCaMo project used to run the test manager agent
 // (and souce code of the agents to be tested by the manager)
-
 
 mas test_mas {
     agent bob: test-agent.asl {

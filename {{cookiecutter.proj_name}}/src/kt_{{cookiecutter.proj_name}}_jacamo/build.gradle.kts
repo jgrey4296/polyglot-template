@@ -236,39 +236,56 @@ tasks.register<Jar>("uberJar") {
 
 // Test tasks   --------------------------------------------------
 
-tasks.register<JavaExec>("jcmTests") {
-    outputs.upToDateWhen { false } // disable cache
+// Generate a Test Task for each jcm test file
+// TODO: maybe use the sourceset
+val jcmFiles = fileTree(projDir.dir("tests"))
+    .filter  { it.extension == "jcm"  }
 
-    description     = "runs JaCaMo unit tests"
-    group           = "verification"
-    classpath       = sourceSets.main.get().runtimeClasspath
-    mainClass       = launcher
-    standardOutput  = ByteArrayOutputStream()
-    errorOutput     = ByteArrayOutputStream()
+jcmFiles.forEach {
+        tasks.register<JavaExec>("jcmTest_${it.nameWithoutExtension}") {
+            outputs.upToDateWhen { false } // disable cache
+            description     = "run test file ${it.name}"
+            group           = "verification"
+            classpath       = sourceSets.main.get().runtimeClasspath
+            mainClass       = launcher
+            // standardOutput  = ByteArrayOutputStream()
+            errorOutput     = ByteArrayOutputStream()
 
-    var test_jcm    = projDir.file("tests/tests.jcm")
-    val styler      = "black red green yellow blue magenta cyan white"
-        .split(" ")
-        .withIndex()
-        .associate { (key, value) -> Pair(key, { it : String -> "\\033[${value}m${it}\\033[0m" }) }
+            val styler      = "black red green yellow blue magenta cyan white"
+                .split(" ")
+                .withIndex()
+                .associate { (key, value) -> Pair(key, { it : String -> "\\033[${value}m${it}\\033[0m" }) }
 
-    doFirst {
-        println("Starting Test")
+            doFirst {
+                println("--- Starting Test for: ${it}")
+            }
+
+            args(
+                it.toString(),
+                "--log-conf", projDir.file(log_props).toString()
+            )
+
+            doLast {
+                println("--- Finished Test")
+            }
+        }
     }
 
-    args(
-        test_jcm.toString(),
-        "--log-conf", projDir.file(log_props).toString()
-    )
-
-    doLast {
-        println("Finished Test")
+tasks.register("jcmTests") {
+    outputs.upToDateWhen { false }
+    jcmFiles.forEach {
+        dependsOn("jcmTest_${it.nameWithoutExtension}")
     }
 }
 
 tasks.test {
     finalizedBy("testJaCaMo")
 }
+
+// TODO Doc --------------------------------------------------
+
+// jason.util.asl2dot
+// jason.util.asl2html
 
 // util funcs   --------------------------------------------------
 

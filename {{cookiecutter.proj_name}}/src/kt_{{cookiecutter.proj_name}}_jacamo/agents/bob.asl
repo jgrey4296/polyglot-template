@@ -9,8 +9,6 @@
 
 /* Initial goals */
 
-!start.
-
 /* Plans */
 
 +!start : true
@@ -21,6 +19,7 @@
        +started(Y,M,D,H,Min,Sec).             
 
 +greeting(M)[source(A)]
-    <- .print("I received ", M, " from ", A).
+    <- .printf("I received %s from %s", M, A);
+       .send(bill, tell, timetoDie).
 
 
