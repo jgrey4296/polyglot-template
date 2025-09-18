@@ -16,3 +16,4 @@ sdkman 5.18.2
 elixir 1.18.4-otp-26
 erlang 28.0.2
 cargo-show-asm 0.2.52
+ktlint 1.7.1

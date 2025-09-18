@@ -1,2 +1,12 @@
 # .editorconfig -*- lexical-binding: t; no-byte-compile: t; -*-
 # https://editorconfig.org/
+# https://pinterest.github.io/ktlint/latest/rules/configuration-ktlint/
+
+[*.{kt,kts}]
+ktlint_code_style = intellij_idea
+
+ktlint_standard_no-multi-spaces = disabled
+ktlint_standard_parameter-list-spacing = disabled
+ktlint_standard_colon-spacing = disabled
+ktlint_standard_import-ordering = disabled
+ktlint_standard_no-unit-return = disabled
