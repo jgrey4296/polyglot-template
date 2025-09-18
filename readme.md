@@ -10,7 +10,7 @@ Covers:
 - Rust <-> Python with [maturin](https://www.maturin.rs/)
 - Rust <-> Emacs Lisp with [emac](https://docs.rs/emacs/latest/emacs/) crate.
 - [Rocq](https:://rocq-prover.org)
-- Prolog in [swipl]https://www.swi-prolog.org/)
+- Prolog in [swipl](https://www.swi-prolog.org/)
 - [Jacamo](https://github.com/jacamo-lang/jacamo) in [Kotlin](https://kotlinlang.org/docs/home.html) using [gradle](https://gradle.org/) and [sdkman!](https://sdkman.io/)
 - [Godot](https://docs.godotengine.org/en/latest/index.html)
 - [Elixir](https://elixir-lang.org/) using [mix](https://hexdocs.pm/mix/1.18.4/Mix.html)

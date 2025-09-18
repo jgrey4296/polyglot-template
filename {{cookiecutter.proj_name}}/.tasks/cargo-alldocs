@@ -74,6 +74,8 @@ conf_dir     : Final[pl.Path]  = pl.Path("src/_docs")
 sphinx_out   : Final[pl.Path]  = pl.Path(".temp/sphinxdoc")
 doctree_dir  : Final[pl.Path]  = sphinx_out / ".doctrees"
 log_file     : Final[pl.Path]  = pl.Path(".temp/logs/sphinx.log")
+cargo_file   : Final[pl.Path]  = pl.Path("Cargo.toml")
+book_file    : Final[pl.Path]  = pl.Path("book.toml")
 
 try:
     sphinx   = sh.sphinx_build
@@ -87,6 +89,9 @@ except sh.CommandNotFound as err:
 # Body:
 
 def run_sphinx():
+    if not (conf_dir / "conf.py").exists():
+        print("Skipping Sphinx")
+        return
     print("Running Sphinx")
     sphinx(
         # "--fresh-env",
@@ -99,10 +104,16 @@ def run_sphinx():
         )
 
 def run_mdbook():
+    if not book_file.exists():
+        print("Skipping Mdbook")
+        return
     print("Running MdBook")
     mdbook("build")
 
 def run_rustdoc():
+    if not cargo_file.exists():
+        print("Skipping Rustdoc")
+        return
     print("Running Rustdoc")
     cargo_doc("--workspace")
 
