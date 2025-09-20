@@ -1,4 +1,4 @@
-# .editorconfig -*- lexical-binding: t; no-byte-compile: t; -*-
+# .editorconfig -*- mode: conf; lexical-binding: t; no-byte-compile: t; -*-
 # https://editorconfig.org/
 # https://pinterest.github.io/ktlint/latest/rules/configuration-ktlint/
 
@@ -10,3 +10,16 @@ ktlint_standard_parameter-list-spacing = disabled
 ktlint_standard_colon-spacing = disabled
 ktlint_standard_import-ordering = disabled
 ktlint_standard_no-unit-return = disabled
+
+
+[*.cs]
+# https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options
+indent_size                          = 4
+indent_style                         = space
+tab-width                            = 4
+end_of_line                          = crlf
+csharp_new_line_before_open_brace    = none
+csharp_new_line_before_else          = false
+csharp_new_line_before_catch         = false
+csharp_new_line_before_finally       = false
+csharp_style_namespace_declarations  = file_scoped
