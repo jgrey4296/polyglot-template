@@ -4,13 +4,14 @@
 
 if [ -d "$HOME/.local/dotnet" ]; then
     echo "Dotnet installed"
-    exit 0
 else
-    echo "Dotnet not installed"
+    echo "Installing Dotnet"
+    mkdir -p .temp/dotnet
+    wget https://dot.net/v1/dotnet-install.sh -O ./.temp/dotnet/dotnet-install.sh
+    chmod +x ./.temp/dotnet/dotnet-install.sh
+    ./.temp/dotnet/dotnet-install.sh --install-dir "$HOME/.local/dotnet"
 fi
 
-mkdir -p .temp/dotnet
-wget https://dot.net/v1/dotnet-install.sh -O ./.temp/dotnet/dotnet-install.sh
-chmod +x ./.temp/dotnet/dotnet-install.sh
-
-./.temp/dotnet/dotnet-install.sh --install-dir "$HOME/.local/dotnet"
+# Initialising solution
+dotnet new sln
+dotnet sln add ./src/cs_*
