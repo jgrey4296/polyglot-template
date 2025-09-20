@@ -77,21 +77,18 @@ log_file     : Final[pl.Path]  = pl.Path(".temp/logs/sphinx.log")
 cargo_file   : Final[pl.Path]  = pl.Path("Cargo.toml")
 book_file    : Final[pl.Path]  = pl.Path("book.toml")
 
-try:
-    sphinx   = sh.sphinx_build
-    cargo_doc  = sh.cargo.doc
-    mdbook   = sh.mdbook
-except sh.CommandNotFound as err:
-    print(err)
-    sys.exit(1)
-
-
 # Body:
 
 def run_sphinx():
     if not (conf_dir / "conf.py").exists():
         print("Skipping Sphinx")
         return
+    try:
+        sphinx     = sh.sphinx_build
+    except sh.CommandNotFound as err:
+        print("Sphinx not found")
+        return
+
     print("Running Sphinx")
     sphinx(
         # "--fresh-env",
@@ -107,6 +104,12 @@ def run_mdbook():
     if not book_file.exists():
         print("Skipping Mdbook")
         return
+    try:
+        mdbook     = sh.mdbook
+    except sh.CommandNotFound as err:
+        print("MdBook not found")
+        return
+
     print("Running MdBook")
     mdbook("build")
 
@@ -114,6 +117,12 @@ def run_rustdoc():
     if not cargo_file.exists():
         print("Skipping Rustdoc")
         return
+    try:
+        cargo_doc  = sh.cargo.doc
+    except sh.CommandNotFound as err:
+        print("Cargo doc not found")
+        return
+
     print("Running Rustdoc")
     cargo_doc("--workspace")
 

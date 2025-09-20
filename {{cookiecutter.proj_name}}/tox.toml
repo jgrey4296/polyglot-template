@@ -71,7 +71,7 @@ commands  = [
 [env.docs]
 description = "Build all relevant docs"
 commands = [
-  ["uv", "run", ".temp/cargo-alldocs"]
+  ["uv", "run", "--script", ".tasks/cargo-alldocs"]
 ]
 
 [env.release]
@@ -81,5 +81,5 @@ set_env      = [
    {LEVEL={replace="env", name="LEVEL", default="minor"}},
 ]
 commands     = [
-    ["uv", "run", ".tasks/cargo-do-release", "{env:LEVEL}"]
+    ["uv", "run", "--script", ".tasks/cargo-do-release", "{env:LEVEL}"]
 ]
