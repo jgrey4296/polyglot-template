@@ -1,4 +1,4 @@
-//  jg_action.kt -*- mode: Kotlin -*-
+//  jg_action.kt -*- mode: kotlin-ts -*-
 @file:JvmName("simple")
 
 package jg.actions
