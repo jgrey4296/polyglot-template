@@ -69,14 +69,14 @@ logging = logmod.getLogger(__name__)
 ##-- end logging
 
 # Vars:
-source_dir   : Final[pl.Path]  = pl.Path("src")
-conf_dir     : Final[pl.Path]  = pl.Path("src/_docs")
-sphinx_out   : Final[pl.Path]  = pl.Path(".temp/sphinxdoc")
-doctree_dir  : Final[pl.Path]  = sphinx_out / ".doctrees"
-log_file     : Final[pl.Path]  = pl.Path(".temp/logs/sphinx.log")
-cargo_file   : Final[pl.Path]  = pl.Path("Cargo.toml")
-book_file    : Final[pl.Path]  = pl.Path("book.toml")
-
+source_dir      : Final[pl.Path]  = pl.Path("src")
+conf_dir        : Final[pl.Path]  = pl.Path("src/_docs")
+sphinx_out      : Final[pl.Path]  = pl.Path(".temp/sphinxdoc")
+doctree_dir     : Final[pl.Path]  = sphinx_out / ".doctrees"
+log_file        : Final[pl.Path]  = pl.Path(".temp/logs/sphinx.log")
+cargo_file      : Final[pl.Path]  = pl.Path("Cargo.toml")
+book_file       : Final[pl.Path]  = pl.Path("book.toml")
+sphinx_builder  : Final[str]      = "bibhtml"
 # Body:
 
 def run_sphinx():
@@ -95,7 +95,7 @@ def run_sphinx():
         "--conf-dir", conf_dir,
         "--doctree-dir", doctree_dir,
         "--warning-file", log_file,
-        "--builder", "html",
+        "--builder", sphinx_builder,
         source_dir,
         sphinx_out,
         )
