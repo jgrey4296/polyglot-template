@@ -1,0 +1,55 @@
+%% __ -*- mode: LaTeX/FP -*-
+%% compiler:lualatex
+%% available compilers : lualatex pdflatex xelatex
+\documentclass[class=article, crop=false]{standalone}
+
+%%-- imports
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfstartview=FitH]{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage[russian,english]{babel}
+\usepackage[version=3]{mhchem}
+\usepackage{doi}
+\usepackage{listings}
+\usepackage{titlelink}
+\usepackage{url}
+\usepackage{marginnote}
+\usepackage[bottom]{footmisc}
+\usepackage{sidecap}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{latexsym}
+
+%%-- end imports
+
+
+\IfStandalone{
+  \title{\titlelink{Gantt}{}}
+  \author{John Grey}
+  \date{21-09-2025}
+  \setlength{\parskip}{2em}
+}{}
+
+\begin{document}
+\IfStandalone{\maketitle}{\chapterlink*{Gantt}{}}
+
+%% ---------- Content ----------
+
+
+%% ---------- Footnotes ----------
+
+% \footnotemark[N]
+% \footnotetext[N]{Cras placerat accumsan nulla.}
+
+%% --------------------------------------------------
+
+
+\IfStandalone{
+  \nocite{*}
+  \bibliographystyle{jg_custom.bst}
+  \bibliography{}
+  }{}
+
+\end{document}

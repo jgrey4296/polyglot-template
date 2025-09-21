@@ -8,6 +8,7 @@
     "src/_docs/_static",
     "src/_docs/**.jinja",
     "src/_docs/_templates",
+    "src/**.tex",
     ".github"
   ],
   "_email": "my@email.com",
