@@ -22,22 +22,24 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{latexsym}
+\usepackage{layout}
 
 %%-- end imports
-\def\ganntitle{Gannt}
+\def\layout_check_title{Layout Check}
 
 \IfStandalone{
-  \title{\titlelink{\ganntitle}{}}
+  \title{\titlelink{\layout_check_title}{}}
   \author{John Grey}
-  \date{21-09-2025}
+  \date{24-09-2025}
   \setlength{\parskip}{2em}
 }{}
 
 \begin{document}
-\IfStandalone{\maketitle}{\chapterlink*{\ganntitle}{}}
+% \IfStandalone{\maketitle}{\chapterlink*{\layout_check_title}{}}
 
 %% ---------- Content ----------
 
+\layout{}
 
 %% ---------- Footnotes ----------
 

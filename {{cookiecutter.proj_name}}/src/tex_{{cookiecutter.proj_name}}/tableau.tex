@@ -6,7 +6,8 @@
 %%-- imports
 
 \usepackage{import}
-\usepackage[T1,T2A]{fontenc}
+% \usepackage[T1,T2A]{fontenc}
+\usepackage{fontspec}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfstartview=FitH]{hyperref}
 \usepackage[numbers]{natbib}
 \usepackage[russian,english]{babel}
@@ -65,15 +66,16 @@
 
 %%-- end options
 
+\def\tableaux_title{Tableauxs}
 \IfStandalone{
-  \title{\titlelink{Tableaus}{}}
+  \title{\titlelink{\tableaux_title}{}}
   \author{John Grey}
   \date{May 11, 2022}
   \setlength{\parskip}{2em}
 }{}
 
 \begin{document}
-\IfStandalone{\maketitle}{\chapterlink*{Tableaus}{}}
+\IfStandalone{\maketitle}{\chapterlink*{\tableaux_title}{}}
 
 %% ---------- Content ----------
 
@@ -89,7 +91,7 @@ Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci comm
 
 
 
-\begin{figure*}
+\begin{figure}
   \begin{equation}
     \begin{nd}
       \hypo {top} {A}
@@ -106,7 +108,7 @@ Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci comm
     \end{nd}
   \end{equation}
   \caption{\label{eq:f1}}
-\end{figure*}
+\end{figure}
 
 %% --------------------------------------------------
 
@@ -117,7 +119,7 @@ Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis 
 
 
 
-\begin{figure*}
+\begin{figure}
 \[
   \KMproof{
     \cbblk{}{
@@ -134,7 +136,7 @@ Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis 
   }
 \]
 \caption{\label{eq:nd1}}
-\end{figure*}
+\end{figure}
 
 %% --------------------------------------------------
 

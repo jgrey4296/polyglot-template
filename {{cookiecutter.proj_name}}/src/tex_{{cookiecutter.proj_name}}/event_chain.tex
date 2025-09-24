@@ -6,7 +6,8 @@
 %%-- imports
 
 \usepackage{import} % <--- for better importing
-\usepackage[T1,T2A]{fontenc}
+% \usepackage[T1,T2A]{fontenc}
+\usepackage{fontspec}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfstartview=FitH]{hyperref}
 \usepackage[numbers]{natbib}
 \usepackage[russian,english]{babel}
@@ -20,15 +21,16 @@
 
 \usepackage{eventchain}
 
+\def\event_chaintitle{Event Chain Examples}
 \IfStandalone{
-  \title{\titlelink{Event Chain Examples}{}}
+  \title{\titlelink{\event_chaintitle}{}}
   \author{John Grey}
   \date{May 11, 2022}
   \setlength{\parskip}{2em}
 }{}
 
 \begin{document}
-\IfStandalone{\maketitle}{\chapterlink*{Event Chain Examples}{}}
+\IfStandalone{\maketitle}{\chapterlink*{\event_chaintitle}{}}
 
 %% ---------- Content ----------
 

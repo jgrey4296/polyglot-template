@@ -4,8 +4,10 @@
 \documentclass[class=article, crop=false]{standalone}
 
 %%-- imports
-
-\usepackage[T1,T2A]{fontenc}
+\usepackage{iftex}
+% from https://tex.stackexchange.com/questions/103704
+% \usepackage[T1,T2A]{fontenc}
+\usepackage{fontspec}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfstartview=FitH]{hyperref}
 \usepackage[numbers]{natbib}
 \usepackage[russian,english]{babel}
@@ -14,23 +16,53 @@
 \usepackage{listings}
 \usepackage{titlelink}
 \usepackage{url}
-
+\usepackage{lettrine}
+% \usepackage{titling}
 %%-- end imports
 
+\usepackage{quickfont}
+% \setQuickFoncLoc{/home/john/.local/share/fonts}
+\setquickmain{royal.ttf}
+
+\def\basictitle{\quickfontfam Basic}
 
 \IfStandalone{
-  \title{\titlelink{Basic}{}}
+  \title{\titlelink{\basictitle}{}}
   \author{John Grey}
   \date{21-09-2025}
   \setlength{\parskip}{2em}
 }{}
 
 \begin{document}
-\IfStandalone{\maketitle}{\chapterlink*{Basic}{}}
+\IfStandalone{\maketitle}{\chapterlink*{\basictitle}{}}
 
 %% ---------- Content ----------
 
+\lettrine[lines=3]{A}{liquam} erat volutpat.  Nunc eleifend leo vitae magna. \sf{Pellentesque dapibus suscipit ligula.}. \tt{Donec pretium posuere tellus.}
+\cite{abnett07__broth_snake_} 
 
+
+
+\huge{Têtiñg} \normalsize
+Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.
+
+\begin{quickmain}{royal.ttf}
+A quickmain section. blah blah blah.
+\end{quickmain}
+
+\begin{quickmain}{}
+A quickmain section. blah blah blah.
+\end{quickmain}
+
+\begin{quickmain}{who_asks_satan.ttf}
+  This is a quick sans section.
+\end{quickmain}
+  
+\begin{quickmain}{royal.ttf}
+  this is a quick mono section.
+\end{quickmain}
+
+\noindent Return to normal.
 
 %% ---------- Footnotes ----------
 
@@ -43,7 +75,7 @@
 \IfStandalone{
   \nocite{*}
   \bibliographystyle{jg_custom.bst}
-  \bibliography{}
+  \bibliography{./local}
   }{}
 
 \end{document}

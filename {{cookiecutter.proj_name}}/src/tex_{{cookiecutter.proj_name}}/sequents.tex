@@ -6,7 +6,8 @@
 %%-- imports
 
 \usepackage{import}
-\usepackage[T1,T2A]{fontenc}
+% \usepackage[T1,T2A]{fontenc}
+\usepackage{fontspec}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfstartview=FitH]{hyperref}
 \usepackage[numbers]{natbib}
 \usepackage[russian,english]{babel}
@@ -72,15 +73,17 @@
 
 %%-- end options
 
+\def\sequents_title{Sequent Examples}
+
 \IfStandalone{
-  \title{\titlelink{Sequent Examples}{}}
+  \title{\titlelink{\sequents_title}{}}
   \author{John Grey}
   \date{May 11, 2022}
   \setlength{\parskip}{2em}
 }{}
 
 \begin{document}
-\IfStandalone{\maketitle}{\chapterlink*{Sequent Examples}{}}
+\IfStandalone{\maketitle}{\chapterlink*{\sequents_title}{}}
 
 %% ---------- Content ----------
 
@@ -92,7 +95,8 @@ Use of different sequent proof packages. \ref{p3} is an example of prftree.
 
 The ebproof package.
 
-\begin{figure} \[
+\begin{figure}
+  \[
     \begin{prooftree}
       \hypo{Q} \hypo{E}
       \infer2[wf]{D &\vdash O}
@@ -123,7 +127,7 @@ The ebproof package.
 
 The prftree package.
 
-\begin{figure*}[h]
+\begin{figure}
   % prftree [opts] { label/rulename } { assumption }* {conclusion}
   \[
     \prftree[r,double,straight]{lab1} 
@@ -136,7 +140,7 @@ The prftree package.
   \]
   \caption{Proof 3}
   \label{p3}
-\end{figure*}
+\end{figure}
 
 
 

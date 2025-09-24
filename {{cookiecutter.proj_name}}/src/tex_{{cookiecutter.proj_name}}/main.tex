@@ -6,7 +6,8 @@
 \usepackage[subpreambles=true]{standalone} % <--- for merging files
 \usepackage{import}                        % <--- for better importing
 \usepackage[Conny]{fncychap}               % <----
-\usepackage[T1,T2A]{fontenc}
+% \usepackage[T1,T2A]{fontenc}
+\usepackage{fontspec}
 \usepackage[russian,english]{babel}
 \usepackage[version=3]{mhchem}
 \usepackage{listings}
@@ -19,7 +20,7 @@
 
 % \usepackage[inner=7cm, marginparwidth=3cm, marginparsep=2cm]{geometry} % <- modify margins
 
-\title{TODO}
+\title{Macrotest}
 \author{John Grey}
 
 \begin{document}
@@ -30,12 +31,15 @@
 \mainmatter
 \setlength{\parskip}{1.5em}
 
+\import{.}{basic}
 \import{.}{event_chain}
 \import{.}{sequents}
 \import{.}{tableau}
 % \import{.}{gantt}
 
+\import{.}{layout_check}
+
 \nocite{*}
-% \bibliographystyle{jg_custom.bst}
-% \bibliography{}
+\bibliographystyle{jg_custom.bst}
+\bibliography{local}
 \end{document}

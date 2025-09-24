@@ -19,3 +19,5 @@ Tags:
 ## Changelog 
 
 ## Checklist
+
+## Latex
