@@ -5,37 +5,32 @@
 
 %%-- imports
 
-% \usepackage[T1,T2A]{fontenc}
 \usepackage{fontspec}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfstartview=FitH]{hyperref}
-\usepackage[numbers]{natbib}
-\usepackage[russian,english]{babel}
-\usepackage[version=3]{mhchem}
-\usepackage{doi}
-\usepackage{listings}
-\usepackage{titlelink}
 \usepackage{url}
-\usepackage{marginnote}
-\usepackage[bottom]{footmisc}
-\usepackage{sidecap}
-\usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{latexsym}
 \usepackage{layout}
+\usepackage{pdflscape}
 
 %%-- end imports
-\def\layout_check_title{Layout Check}
+\usepackage{responsive-title}
 
-\IfStandalone{
-  \title{\titlelink{\layout_check_title}{}}
-  \author{John Grey}
-  \date{24-09-2025}
-  \setlength{\parskip}{2em}
-}{}
+\def\layoutCheckTitle{Layout Check}
+
+\author{John Grey}
+\date{24-09-2025}
+\setlength{\parskip}{2em}
 
 \begin{document}
-% \IfStandalone{\maketitle}{\chapterlink*{\layout_check_title}{}}
+\resptitle{\layoutCheckTitle}{\layoutCheckTitle}
+\renewcommand{\abstractname}{} 
+\begin{abstract}
+Nam euismod tellus id erat.  
+\end{abstract}
+
+\hrulefill
+\vfill
+\pagebreak
 
 %% ---------- Content ----------
 
@@ -48,11 +43,5 @@
 
 %% --------------------------------------------------
 
-
-\IfStandalone{
-  \nocite{*}
-  \bibliographystyle{jg_custom.bst}
-  \bibliography{}
-  }{}
 
 \end{document}

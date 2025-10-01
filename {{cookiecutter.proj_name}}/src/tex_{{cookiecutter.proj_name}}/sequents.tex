@@ -6,7 +6,6 @@
 %%-- imports
 
 \usepackage{import}
-% \usepackage[T1,T2A]{fontenc}
 \usepackage{fontspec}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfstartview=FitH]{hyperref}
 \usepackage[numbers]{natbib}
@@ -14,11 +13,11 @@
 \usepackage[version=3]{mhchem}
 \usepackage{doi}
 \usepackage{listings}
-\usepackage{titlelink}
 \usepackage{url}
 
 %%-- end imports
 
+\usepackage{responsive-title}
 % \usepackage[inner=7cm, marginparwidth=3cm, marginparsep=2cm]{geometry} % <- modify margins
 \usepackage{marginnote}
 \usepackage[bottom]{footmisc}
@@ -28,6 +27,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{latexsym}
+\usepackage{etoc}
 
 %%-- tableau
 % TODO: https://ctan.org/pkg/natded
@@ -65,7 +65,7 @@
 
 %%-- options
 % Optional to turn on the short abbreviations
-\EnableBpAbbreviations
+% \EnableBpAbbreviations
 
 % \alwaysRootAtTop  % makes proofs upside down
 % \alwaysRootAtBottom % -- this is the default setting
@@ -73,46 +73,49 @@
 
 %%-- end options
 
-\def\sequents_title{Sequent Examples}
+\def\sequentsTitle{Sequent Examples}
 
-\IfStandalone{
-  \title{\titlelink{\sequents_title}{}}
-  \author{John Grey}
-  \date{May 11, 2022}
-  \setlength{\parskip}{2em}
-}{}
+\author{John Grey}
+\date{May 11, 2022}
+\setlength{\parskip}{2em}
 
 \begin{document}
-\IfStandalone{\maketitle}{\chapterlink*{\sequents_title}{}}
+\resptitle{\sequentsTitle}{\sequentsTitle}
+\begin{center}
+    Cras placerat accumsan nulla.  
+    Use of different sequent proof packages. \ref{p3} is an example of prftree.
+\end{center}
+% \localtableofcontents
+\hrulefill
+\vfill
+\pagebreak
 
 %% ---------- Content ----------
 
-Use of different sequent proof packages. \ref{p3} is an example of prftree.
 
 %% --------------------------------------------------
-\pagebreak
-\section{ebproof}
+\section*{ebproof}
 
-The ebproof package.
+The ebproof package. 
 
-\begin{figure}
+\begin{figure}[hb]
   \[
     \begin{prooftree}
       \hypo{Q} \hypo{E}
-      \infer2[wf]{D &\vdash O}
+      \infer2[wf]{D & \vdash O}
       \hypo{Y}
-      \infer1[oo]{E &\vdash B}
+      \infer1[oo]{E & \vdash B}
       \hypo{W}
-      \infer3[a]{B &\vdash Q}
+      \infer3[a]{B & \vdash Q}
     \end{prooftree}
   \] \centering \caption{Simple} \label{eq:eb1}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[hb]
   \[
   \begin{prooftree}
     \hypo{ \Gamma, A &\vdash B }
-    \infer1[abs]{ \Gamma &\vdash A\toB }
+    \infer1[abs]{ \Gamma &\vdash A \to B }
     \hypo{ \Gamma \vdash A }
     \infer2[app]{ \Gamma \vdash B }
   \end{prooftree}
@@ -123,11 +126,11 @@ The ebproof package.
 
 %% --------------------------------------------------
 \pagebreak
-\section{prftree}
+\section*{prftree}
 
 The prftree package.
 
-\begin{figure}
+\begin{figure}[hb]
   % prftree [opts] { label/rulename } { assumption }* {conclusion}
   \[
     \prftree[r,double,straight]{lab1} 

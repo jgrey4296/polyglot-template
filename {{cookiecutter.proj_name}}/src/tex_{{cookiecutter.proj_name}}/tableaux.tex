@@ -6,7 +6,6 @@
 %%-- imports
 
 \usepackage{import}
-% \usepackage[T1,T2A]{fontenc}
 \usepackage{fontspec}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, pdfstartview=FitH]{hyperref}
 \usepackage[numbers]{natbib}
@@ -14,7 +13,6 @@
 \usepackage[version=3]{mhchem}
 \usepackage{doi}
 \usepackage{listings}
-\usepackage{titlelink}
 \usepackage{url}
 \usepackage{marginnote}
 \usepackage[bottom]{footmisc}
@@ -27,7 +25,9 @@
 
 %%-- end imports
 
+\usepackage{responsive-title}
 % \usepackage[inner=7cm, marginparwidth=3cm, marginparsep=2cm]{geometry} % <- modify margins
+\usepackage{cmll}
 
 %%-- tableau
 % https://ctan.org/pkg/fitch 
@@ -58,7 +58,7 @@
 
 %%-- options
 % Optional to turn on the short abbreviations
-\EnableBpAbbreviations
+% \EnableBpAbbreviations
 
 % \alwaysRootAtTop  % makes proofs upside down
 % \alwaysRootAtBottom % -- this is the default setting
@@ -66,32 +66,32 @@
 
 %%-- end options
 
-\def\tableaux_title{Tableauxs}
-\IfStandalone{
-  \title{\titlelink{\tableaux_title}{}}
-  \author{John Grey}
-  \date{May 11, 2022}
-  \setlength{\parskip}{2em}
-}{}
+\def\tableauxTitle{Tableauxs}
+\author{John Grey}
+\date{May 11, 2022}
+\setlength{\parskip}{2em}
 
 \begin{document}
-\IfStandalone{\maketitle}{\chapterlink*{\tableaux_title}{}}
+\resptitle{\tableauxTitle}{\tableauxTitle}
+\begin{center}
+  Examples of Tableau Proof packages. \ref{eq:f1} is a fitch tableaux.
+  Meanwhile \ref{eq:nd1} is a natded example and \ref{eq:lpl1} is a logicproof example.
+\end{center}
+\hrulefill
+\vfill
 
 %% ---------- Content ----------
 
-Examples of Tableau Proof packages. \ref{eq:f1} is a fitch tableaux.
-Meanwhile \ref{eq:nd1} is a natded example and \ref{eq:lp1} is a logicproof example.
 
 
 %% --------------------------------------------------
 \pagebreak
-\section{fitch}
+\section*{fitch}
 Next is a derivation tree.
 Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus id enim.  Phasellus neque orci, porta a, aliquet quis, semper a, massa.  Phasellus purus.  Pellentesque tristique imperdiet tortor.  Nam euismod tellus id erat.
 
 
-
-\begin{figure}
+\begin{figure}[hb]
   \begin{equation}
     \begin{nd}
       \hypo {top} {A}
@@ -113,13 +113,13 @@ Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci comm
 %% --------------------------------------------------
 
 \pagebreak
-\section{natded}
+\section*{natded}
 
 Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
 
 
 
-\begin{figure}
+\begin{figure}[hb]
 \[
   \KMproof{
     \cbblk{}{
@@ -141,7 +141,7 @@ Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis 
 %% --------------------------------------------------
 
 \pagebreak
-\section{lplfitch}
+\section*{lplfitch}
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit
 tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et,
@@ -150,15 +150,13 @@ parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.
 Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.
 Nam vestibulum accumsan nisl.
 
-
-
-\begin{figure}
+\begin{figure}[hb]
   \fitchprf{}{
     \subproof{\pline[1.]{A \rightarrow B}}{
-      \pline[2.]{A}
-      \pline[3.]{B}
-    }
-    \pline[4.]{C}
+      \pline[2.]{A} \\
+      \pline[3.]{B} \\
+    } \\
+    \pline[4.]{C} \\
   }
   \centering
   \caption{\label{eq:lpl1}}
