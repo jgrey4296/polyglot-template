@@ -1,2 +1,4 @@
 # #  cargo-rocq -*- mode: sh -*-
 # TODO
+
+set -euo pipefail

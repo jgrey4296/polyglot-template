@@ -1,2 +1,5 @@
 # #  cargo-godot -*- mode: sh -*-
+
+set -euo pipefail
+
 # TODO
