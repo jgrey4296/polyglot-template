@@ -36,10 +36,12 @@
 - [ ] github
     - [ ] publish yaml
     - [ ] test yaml
-    - [ ] maturin CI
+    - [ ] asdf yaml
+    - [ ] maturin CI yaml
 - [ ] scripts
     - [ ] release script
 - [ ] related
     - [ ] wiki
 - [ ] setup
-    - [ ] cargo install-dotnet
+    - [ ] cargo init-dotnet
+    - [ ] asdf tools 
