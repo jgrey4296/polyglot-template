@@ -125,6 +125,8 @@ extensions      = [
 "sphinx.ext.intersphinx",
 # Refernce sections by title: https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html
 # "sphinx.ext.autosectionlabel",
+# https://github.com/sphinx-contrib/plantuml/
+"sphinxcontrib.plantuml",
 #--
 # Extensions which IMPORT CODE:
 # https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html

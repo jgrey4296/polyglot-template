@@ -48,6 +48,8 @@ docs = [
     "pydot>=4.0.1",
     "tox>=4.28.4",
     "tox-uv>=1.27.0",
+    "sphinxcontrib-plantuml>=0.31",
+    "sphinx-bib-domain>=0.1.0",
 ]
 
 # https://docs.astral.sh/uv/concepts/configuration-files/

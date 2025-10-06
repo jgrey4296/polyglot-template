@@ -68,14 +68,20 @@ if typing.TYPE_CHECKING:
 logging = logmod.getLogger(__name__)
 ##-- end logging
 
-# Vars:
-source_dir      : Final[pl.Path]  = pl.Path("src")
-conf_dir        : Final[pl.Path]  = pl.Path("src/_docs")
-sphinx_out      : Final[pl.Path]  = pl.Path(".temp/sphinxdoc")
-doctree_dir     : Final[pl.Path]  = sphinx_out / ".doctrees"
-log_file        : Final[pl.Path]  = pl.Path(".temp/logs/sphinx.log")
+# Core Vars:
 cargo_file      : Final[pl.Path]  = pl.Path("Cargo.toml")
 book_file       : Final[pl.Path]  = pl.Path("book.toml")
+docs_out        : Final[pl.Path]  = pl.Path(".temp/docs")
+sphinx_out      : Final[pl.Path]  = docs_out / "sphinx"
+mdbook_out      : Final[pl.Path]  = docs_out / "mdbook"
+rustdoc_out     : Final[pl.Path]  = docs_out / "rustdoc"
+
+source_dir      : Final[pl.Path]  = pl.Path("src")
+conf_dir        : Final[pl.Path]  = pl.Path("src/_docs")
+
+# Secondary
+doctree_dir     : Final[pl.Path]  = sphinx_out / ".doctrees"
+log_file        : Final[pl.Path]  = pl.Path(".temp/logs/sphinx.log")
 sphinx_builder  : Final[str]      = "bibhtml"
 # Body:
 
@@ -111,7 +117,7 @@ def run_mdbook():
         return
 
     print("Running MdBook")
-    mdbook("build")
+    mdbook("build", dest_dir=str(mdbook_out))
 
 def run_rustdoc():
     if not cargo_file.exists():
@@ -124,13 +130,16 @@ def run_rustdoc():
         return
 
     print("Running Rustdoc")
-    cargo_doc("--workspace")
+    cargo_doc("--workspace", target_dir=str(rustdoc_out))
 
 def main():
     print("Building Documentation")
+    # TODO add switches to control each
     run_rustdoc()
     run_mdbook()
     run_sphinx()
+    # TODO fixup: create a master index.html, link to each sub doc.
+
     sys.exit(0)
 
 ##-- ifmain

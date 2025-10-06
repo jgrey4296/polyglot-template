@@ -4,7 +4,7 @@
 name         = "{{cookiecutter.proj_name}}_bridge_rs"
 version      = "0.1.0"
 description  = "Python Submodule for project to handle rust interaction"
-readme       = "README.md"
+readme       = {workspace = true}
 authors      = [
     { name   = "John Grey", email = "johngrey4296@gmail.com" }
 ]
