@@ -1,5 +1,5 @@
-# #  cargo-rocq -*- mode: sh -*-
-# TODO
+# #  cargo-dispy -*- mode: sh -*-
+## Cargo cmd to disassemble a python file
 
 set -euo pipefail
 
@@ -18,4 +18,5 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
-echo "TODO"
+# use: python -m dis
+echo "TODO";
