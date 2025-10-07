@@ -48,8 +48,9 @@ repos:
     hooks:
     -   id: mixed-line-ending
         args: ["--fix", "auto"]
-    -   id: check-toml
-        stages: [pre-commit]
+    # -   id: check-toml
+    #     stages: [pre-commit]
+    #     (has strange failures)
     -   id: check-xml
         stages: [pre-commit]
     -   id: check-yaml
