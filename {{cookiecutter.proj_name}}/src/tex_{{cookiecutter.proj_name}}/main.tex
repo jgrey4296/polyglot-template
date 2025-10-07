@@ -2,7 +2,7 @@
 %% available compilers : lualatex pdflatex xelatex
 % !TeX TS-program = lualatex
 % !TeX encoding = UTF-8
-\documentclass[12pt,draft]{book}
+\documentclass[12pt]{book}
 
 %%-- imports
 \usepackage[subpreambles=true]{standalone} % <--- for merging files
@@ -34,7 +34,7 @@
 % \suppressprimitiveerror
 \hfuzz=10pt % silences overfull hboxes
 \vfuzz=10pt % silences overfull vboxes
-\overfullrule=10mm
+\overfullrule=0pt
 \tolerance=20000
 \hbadness=100000 % silences underfull hbox warnings
 \vbadness=100000 % silences underfull vbox warnings
@@ -43,22 +43,26 @@
 
 %%-- end warnings
 
+\def\fulltitle{TODO Title}
+\def\fullauthor{John Grey}
+
 %%-- metadata
 \AfterPreamble{\hypersetup{
-    pdfauthor={John Grey},
-    pdftitle={MacroTest},
+    pdftitle={\fulltitle},
+    pdfauthor={\fullauthor},
     pdfsubject={},
     pdfkeywords={}
   }}
 
 %%-- end metadata
 
-
 %%-- title formatting
 \pretitle{
   \begin{center}
     \ttfamily \huge 
 }
+\title{\fulltitle}
+\author{\fullauthor}
 \posttitle{
   \linebreak
   \normalsize
@@ -66,7 +70,6 @@
   \linebreak
   \end{center}
 }
-
 % args: shape, format, label, sep, before, after
 % shape: hang,block,display,runin,{left|right}margin,drop,wrap,frame
 % \renewcommand{\thechapter}{\Roman{chapter}}
@@ -80,8 +83,6 @@
 
 %%-- end title formatting
 
-\title{Macrotest}
-\author{John Grey}
 
 \begin{document}
 \frontmatter
@@ -105,8 +106,8 @@
 \import{.}{layout_check}
 
 \backmatter
-% \nocite{*}
-% \bibliographystyle{jg_custom.bst}
-% \bibliography{local}
+\nocite{*}
+\bibliographystyle{jg_custom.bst}
+\bibliography{local}
 
 \end{document}

@@ -1,0 +1,166 @@
+#!/usr/bin/env bash
+#  cargo-tex -*- mode: sh -*-
+
+set -euo pipefail
+current_script_path="${BASH_SOURCE[0]}"
+# Globals:
+VERBOSE=0
+USE_BIBTEX=1
+PASSES=3
+PROJ_ROOT=$(realpath "$(dirname "$(dirname "$current_script_path")")")
+TARGET=
+TARGET_FILE=
+TARGET_DIR=
+OUT_DIR=
+
+function debug () {
+    if [ "$VERBOSE" -eq 1 ]; then
+        echo "$@"
+    fi
+}
+
+function parse_args () {
+    # Shift off the cmd name
+    shift
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -h|--help)
+                compile_tex_help
+                exit 0
+                ;;
+            -t|--target)
+                TARGET_FILE=$(fdfind --full-path --extension .tex --base-directory "$PROJ_ROOT" --max-results 1 "$2")
+                shift
+                ;;
+            -v|--verbose)
+                echo "* Verbose"
+                VERBOSE=1
+                ;;
+            -p|--passes)
+                PASSES="$2"
+                shift
+                ;;
+            -nb|--no-bibtex)
+                USE_BIBTEX=0
+                ;;
+            --*=*)
+                debug "Assignment: $1"
+                ;;
+            *) # Positional
+                echo "Positional: $1"
+                TARGET_FILE=$(fdfind --full-path --extension .tex --base-directory "$PROJ_ROOT" --max-results 1 "$1")
+                ;;
+        esac
+        shift
+    done
+
+    if [[ ! -f "$TARGET_FILE" ]]; then
+        echo "Using default Target"
+        TARGET_FILE=$(fdfind -e .tex --base-directory "$PROJ_ROOT" --max-results 1 main)
+    fi
+
+    TARGET_DIR=$(dirname "$TARGET_FILE")
+    TARGET=$(basename "$TARGET_FILE" ".tex")
+    TARGET_DIR="$PROJ_ROOT/$TARGET_DIR"
+    OUT_DIR="$PROJ_ROOT/.temp/tex"
+
+    echo "* Compiling    : $TARGET_FILE"
+    echo "* Project Root : $PROJ_ROOT"
+    echo "* Target Dir   : $TARGET_DIR"
+    echo "* Passes       : $PASSES"
+    echo "* Bibtex       : $USE_BIBTEX"
+
+}
+
+# shellcheck disable=SC2317
+function compile_tex_help () {
+    echo "Args:"
+    echo "-v  | --verbose"
+    echo "-t  | --target {file}"
+    echo "-p  | --passes {int}"
+    echo "-nb | --no-bibtex"
+    echo "-h  | --help"
+    echo ""
+}
+
+function setup () {
+    echo "-------------------------"
+    echo "* Setup"
+    echo "-------------------------"
+    mkdir -p "$OUT_DIR"
+    if [[ -f "$PROJ_ROOT/tex.reqs" ]]; then
+        asdf cmd texlive deps "$PROJ_ROOT/tex.reqs"
+    else
+        echo "No Tex Requirements to install"
+    fi
+}
+
+function luatex_pass () {
+    echo "-------------------------"
+    echo "* Pass $1: LuaLaTeX Compiling $TARGET in $TARGET_DIR"
+    echo "-------------------------"
+    cd "$TARGET_DIR"
+    declare -a ARGS=(
+    "--lua=$PROJ_ROOT/init.tex.lua"
+    "-interaction=nonstopmode"
+    "--output-directory=$OUT_DIR"
+    )
+
+    case "$VERBOSE" in
+        0)
+            echo "..."
+            lualatex "${ARGS[@]}" "$TARGET.tex" > /dev/null || echo "Pass Exit Value: $?"
+            ;;
+        *)
+            lualatex "${ARGS[@]}" "$TARGET.tex" || echo "Pass Exit Value: $?"
+            ;;
+    esac
+}
+
+function bibtex_pass () {
+    echo "-------------------------"
+    echo "* Pass $1: Bibtex $TARGET in $OUT_DIR"
+    echo "-------------------------"
+    cd "$OUT_DIR"
+    case "$VERBOSE" in
+        0)
+            BIBINPUTS="$TARGET_DIR:${BIBINPUTS:-}" bibtex "$TARGET" > /dev/null
+            ;;
+        *)
+            BIBINPUTS="$TARGET_DIR:${BIBINPUTS:-}" bibtex "$TARGET"
+            ;;
+    esac
+}
+
+function finish () {
+    echo "-------------------------"
+    echo "Finished tex compilation to: $1"
+    echo "-------------------------"
+}
+
+function run_compilation () {
+    echo "-------------------------"
+    echo "* Tex Compilation"
+    echo "-------------------------"
+
+    parse_args "$@"
+    setup
+    for i in $(seq 1 "$PASSES"); do
+        luatex_pass "$i" "$TARGET" "$TARGET_DIR" "$PROJ_ROOT" "$OUT_DIR"
+    done
+    case "$USE_BIBTEX" in
+        1)
+            bibtex_pass $((++i))
+            luatex_pass $((++i))
+            luatex_pass $((++i))
+            ;;
+        *)
+            ;;
+
+    esac
+    finish "$OUT_DIR"
+}
+
+run_compilation "$@"
+
+exit 0

@@ -1,5 +1,5 @@
 -- ## init.lua -*- mode: lua-mode -*-
--- # Summary:
+-- # Summary: Init file passed to lualatex in calls of cargo tex
 -- #
 -- # Tags:
 -- #

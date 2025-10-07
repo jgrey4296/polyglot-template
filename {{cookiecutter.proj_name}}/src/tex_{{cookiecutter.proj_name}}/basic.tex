@@ -1,6 +1,5 @@
 %% __ -*- mode: LaTeX/FP -*-
-%% compiler:lualatex --lua=/media/john/data/github/macrotest/src/tex_macrotest/init.lua
-%% available compilers : lualatex pdflatex xelatex
+%% compiler:lualatex
 \documentclass[class=article, crop=false]{standalone}
 
 %%-- imports
@@ -80,7 +79,7 @@ A quickmain section. blah blah blah.
 \IfStandalone{
   \nocite{*}
   \bibliographystyle{jg_custom.bst}
-  \bibliography{./local}
+  \bibliography{local}
   }{}
 
 \end{document}

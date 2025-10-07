@@ -73,12 +73,15 @@
 
 \begin{document}
 \resptitle{\tableauxTitle}{\tableauxTitle}
-\begin{center}
+\renewcommand{\abstractname}{}
+\begin{abstract}
   Examples of Tableau Proof packages. \ref{eq:f1} is a fitch tableaux.
   Meanwhile \ref{eq:nd1} is a natded example and \ref{eq:lpl1} is a logicproof example.
-\end{center}
+\end{abstract}
+
 \hrulefill
 \vfill
+\pagebreak
 
 %% ---------- Content ----------
 
@@ -152,9 +155,11 @@ Nam vestibulum accumsan nisl.
 
 \begin{figure}[hb]
   \fitchprf{}{
-    \subproof{\pline[1.]{A \rightarrow B}}{
-      \pline[2.]{A} \\
-      \pline[3.]{B} \\
+    \subproof{
+      \pline[1.]{A \rightarrow B}}
+    {
+      \pline[2.]{A} $ \\
+      \pline[3.]{B} $ \\
     } \\
     \pline[4.]{C} \\
   }
