@@ -21,6 +21,7 @@
 :cargo-config  : .cargo/config.toml
 :build-script  : build.rs
 :book-config   : book.toml
+:tools         : .tool-versions
 
 ;; Docs
 :docs          : src/_docs
