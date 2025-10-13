@@ -12,14 +12,18 @@ config_version=5
 
 config/name="{{cookiecutter.proj_name}}"
 run/main_scene="res://src/gd_{{cookiecutter.proj_name}}/scenes/main_scene.tscn"
-config/features=PackedStringArray("4.0", "Forward Plus")
+config/features=PackedStringArray("4.5", "Mobile")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://src/gd_{{cookiecutter.proj_name}}/sprites/icon.svg"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=680
+window/size/viewport_width=1200
+window/size/viewport_height=800
 window/size/resizable=false
+
+[rendering]
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

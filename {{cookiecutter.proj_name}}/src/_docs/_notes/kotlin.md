@@ -29,3 +29,4 @@ https://docs.gradle.org/current/userguide/kotlin_dsl.html
 - [ADB](https://developer.android.com/tools/adb)
 - [android gradle plugin](https://developer.android.com/reference/tools/gradle-api)
 - [android sdkmanager](https://developer.android.com/tools/sdkmanager)
+- [[https://developer.android.com/studio/publish/app-signing]]

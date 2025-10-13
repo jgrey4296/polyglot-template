@@ -1,6 +1,10 @@
 # .editorconfig -*- mode: conf; lexical-binding: t; no-byte-compile: t; -*-
 # https://editorconfig.org/
 # https://pinterest.github.io/ktlint/latest/rules/configuration-ktlint/
+root = true
+
+[*]
+charset = utf-8
 
 [*.{kt,kts}]
 ktlint_code_style = intellij_idea

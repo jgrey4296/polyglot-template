@@ -5,6 +5,9 @@ log.*
 build/
 .temp/
 
+# Godot
+.godot/
+
 # Added by cargo
 /target
 /Cargo.lock
