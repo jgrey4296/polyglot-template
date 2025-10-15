@@ -4,7 +4,7 @@
 title         = "{{cookiecutter.proj_name}}"
 authors       = ["{{cookiecutter._author}}"]
 description   = ""
-src           = "src/_docs"
+src           = "src/_book"
 language      = "en"
 multilingual  = false
 

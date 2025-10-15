@@ -13,6 +13,7 @@
 ;; Dot Files and configs
 :related       : .related
 :tasks         : .tasks
+:polyglot      : .polyglot
 :github        : .github/workflows
 :doot          : doot.toml
 :tox           : tox.toml

@@ -5,10 +5,9 @@
   "python": "3.12",
   "_author": "me",
   "_copy_without_render": [
-    "src/_docs/_static",
-    "src/_docs/**.jinja",
-    "src/_docs/_templates",
-    "src/**.tex",
+    "src/_data",
+    "src/_tex",
+    "src/_changes",
     ".github"
   ],
   "_email": "my@email.com",
