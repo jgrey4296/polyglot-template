@@ -18,6 +18,10 @@ file = "Cargo.toml"
 expr = 'version\s+=\s+"(.*)"'
 
 [[files]]
+file = "towncrier.toml"
+expr = 'version\s+=\s+"(.*)"'
+
+[[files]]
 file = "build.gradle.kts"
 expr = 'version\s+=\s+"(.*)"'
 

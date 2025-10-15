@@ -14,7 +14,7 @@ function write_to_aux ()
   texio.write_nl("term", string.format("Writing to Aux: %s", base_path))
   auxf = io.open(base_path,"a+")
   if auxf == nil then return end
-  auxf:write([[blah blah blah]])
+  auxf:write([[ Example Text ]])
   -- f:write([[\def\gtt@chartextrasize#1#2{}]])
   auxf:close()
 end

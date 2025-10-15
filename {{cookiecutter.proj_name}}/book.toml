@@ -12,18 +12,48 @@ multilingual  = false
 edition       = "2024"
 
 [build]
-build-dir                  = ".temp/book"
+build-dir                  = ".temp/docs/book"
 create-missing             = false
 use-default-preprocessors  = true
 extra-watch-dirs           = []
 
-[preprocessor.index]
+##-- preprocessors
+# [preprocessor.polyglot] # custom
+## pass 1 args: "supports" "{renderer}"
+## pass 2 args: json of [context, book]. return modified json
 
-[preprocessor.links]
+# command = "mdbook-polyglot"
+# before = ["index", "links"]
+# after = []
 
+[preprocessor.index] # default
+
+[preprocessor.links] # default
+
+##-- end preprocessors
+
+##-- html renderer
 [output.html]
+theme = "src/_data/theme/"
 additional-css = []
+additional-js = []
+
 
 [output.html.search]
 
+[output.html.redirect]
 
+[output.html.code]
+
+[output.html.fold]
+
+[output.html.print]
+##-- end html renderer
+
+##-- custom renderer
+# [output.polyglot-rst]
+## passed json of [book, config] to render
+
+# command = "cargo polyglot book"
+# optional = true
+##-- end custom renderer

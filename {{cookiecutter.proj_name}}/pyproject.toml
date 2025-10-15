@@ -108,29 +108,6 @@ build-backend    = "uv_build"
 
 # Tools #######################################################################
 
-##-- towncrier
-## https://towncrier.readthedocs.io/en/stable/configuration.html
-[tool.towncrier]
-package_dir  = "src"
-directory    = "src/_docs/_changes"
-filename     = "CHANGELOG.md"
-template     = "src/_docs/_templates/news.md"
-
-[[tool.towncrier.section]]
-name = "Python"
-path = "python"
-
-[[tool.towncrier.section]]
-name = "Rust"
-path = "rust"
-
-[[tool.towncrier.section]]
-name = "Lisp"
-path = "lisp"
-
-
-##-- end towncrier
-
 ##-- mypy
 # https://mypy.readthedocs.io/en/stable/config_file.html
 [tool.mypy]

@@ -1,10 +1,10 @@
 .. -*- mode: ReST -*-
 
-.. _root:
+.. _bad2:
 
-===================================
-{{cookiecutter.proj_name}} Polyglot
-===================================
+=========
+BAD page2
+=========
 
 .. contents:: Contents
    :local:
@@ -18,16 +18,10 @@ dignissim bibendum.  Vivamus id enim.  Phasellus neque orci, porta a, aliquet
 quis, semper a, massa.  Phasellus purus.  Pellentesque tristique imperdiet
 tortor.  Nam euismod tellus id erat.
 
-.. .. Main Sidebar TocTree
 
-.. toctree::
-   :maxdepth: 3
-   :glob:
-   :hidden:
 
-   [a-z]*/index
-      
-   _sphinx/*
-   genindex
-   modindex
-   API Reference <./_sphinx/autoapi/{{cookiecutter.proj_name}}/index>
+..  --------------------------------------------------
+.. Links
+.. --------------------------------------------------
+
+.. _somewhere: https://somewhere.com
