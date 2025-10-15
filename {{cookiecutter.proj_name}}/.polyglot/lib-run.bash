@@ -5,12 +5,6 @@ function run_godot () {
     header "TODO: Run Godot"
 }
 
-function run_godot_export () {
-    # 1 param. the name of the exported aab.
-    header "Exporting to Android"
-    godot4 --export-debug Android "$TEMP_DIR/android/${1:-polyglot}.aab"
-}
-
 function run_prolog () {
     header "TODO: Run prolog"
 }
@@ -39,7 +33,6 @@ function run_dispy () {
     fi
 }
 
-
 # linting --------------------------------------------------
 
 
@@ -49,22 +42,32 @@ function run_dispy () {
 # Docs --------------------------------------------------
 function run_sphinx () {
     echo "---- Building Sphinx ----"
-    local CONF_DIR="$SRC_DIR/_docs"
+    local CONF_DIR="$SRC_DIR/_sphinx"
     local SPHINX_OUT="$DOC_OUT/sphinx"
 
-    sphinx-build \
-        --conf-dir "$DOC_DIR" \
+    echo "- config location: ${CONF_DIR}"
+    echo "- out location: ${SPHINX_OUT}"
+    echo "- builder: ${SPHINX_BUILDER}"
+    echo ""
+
+    rm -r "${SPHINX_OUT}"
+
+    uv run --frozen sphinx-build \
+        --verbose \
+        --write-all \
+        --fresh-env \
+        --conf-dir "$CONF_DIR" \
         --doctree-dir "$SPHINX_OUT/.doctrees" \
         --warning-file "$LOG_DIR/sphinx.log" \
         --builder "$SPHINX_BUILDER" \
         "$SRC_DIR" \
-        "$SPHINX_OUT" || fail "Sphinx Failed"
+        "$SPHINX_OUT"
+        # || fail "Sphinx Failed"
 }
 
 function run_mdbook () {
     echo "---- Building Mkdbook ----"
-    mdbook build \
-        --dest-dir "$DOC_OUT/mdbook"
+    mdbook build
 }
 
 function run_rustdoc () {

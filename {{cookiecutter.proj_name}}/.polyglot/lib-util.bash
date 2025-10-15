@@ -64,12 +64,6 @@ function init_py () {
     uv sync --all-groups
 }
 
-function init_godot () {
-    subhead "Initialising godot"
-    godot4 --install-android-build-template
-
-}
-
 function init_precommit () {
     if [[ -e "$PROJ_ROOT/.pre-commit-config.yaml" ]]; then
         tdot "Installing pre-commit hooks"

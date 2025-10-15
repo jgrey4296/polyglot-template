@@ -3,7 +3,7 @@
 # https://github.com/tox-dev/tox-uv
 # String substitution: "{[<table>]<key>}"
 requires                   = ["tox>=4", "tox-uv>=1"]
-env_list                   = ["docs"]
+env_list                   = []
 work_dir                   = ".temp/tox/work"
 temp_dir                   = ".temp/tox/temp"
 skip_missing_interpreters  = false
@@ -68,18 +68,4 @@ commands  = [
      ],
 ]
 
-[env.docs]
-description = "Build all relevant docs"
-commands = [
-  ["uv", "run", "--script", ".tasks/cargo-alldocs"]
-]
 
-[env.release]
-description  = "Generate a release"
-set_env      = [
-   {replace="ref", of=["env_run_base", "set_env"]},
-   {LEVEL={replace="env", name="LEVEL", default="minor"}},
-]
-commands     = [
-    ["uv", "run", "--script", ".tasks/cargo-do-release", "{env:LEVEL}"]
-]
