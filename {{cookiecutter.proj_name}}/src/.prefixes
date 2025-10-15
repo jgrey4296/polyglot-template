@@ -1,0 +1,18 @@
+ .prefixes -*- mode: Fundamental -*-
+
+Prefixes for polyglot code directories:
+
+asdf - asdf plugin scripts
+cs   - dotnet csharp
+ex   - elixir
+fs   - dotnet fsharp
+gd   - godot
+kt   - kotlin
+pl   - prolog
+py   - python
+rq   - rocq proofs
+rs   - rust
+sc   - supercollider sclang
+tex  -  lua/latex
+
+

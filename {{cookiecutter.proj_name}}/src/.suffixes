@@ -1,0 +1,9 @@
+ .suffixes -*- mode: Fundamental -*-
+
+Suffixes for polyglot code directories
+
+_exe           - executables
+_android       - android apps
+_jacamo        - jacamo MAS.
+_bridge_{lang} - interface between the prefix language to suffix lang
+_macros        - mainly for rust macro crates
