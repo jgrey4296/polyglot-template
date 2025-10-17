@@ -19,7 +19,7 @@ repos:
       - id: conventional-commit-msg
         name: conventional-commit-msg
         language: python
-        entry: .tasks/conventional-commit-msg.py
+        entry: python .tasks/conventional-commit-msg.py
         stages: [commit-msg]
       - id : local.pre.hook.sh
         name: basic.local.sh
