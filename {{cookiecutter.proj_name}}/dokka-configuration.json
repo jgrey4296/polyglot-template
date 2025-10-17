@@ -1,0 +1,15 @@
+{
+  "outputDir": "./.temp/docs/kotlin/",
+  "sourceSets": [
+    {
+      "sourceSetID": {
+        "scopeId": "moduleName",
+        "sourceSetName": "main"
+      },
+      "sourceRoots": [
+          "./src/kt_{{cookiecutter.proj_name}}"
+      ]
+    }
+  ],
+  "pluginsClasspath": []
+}

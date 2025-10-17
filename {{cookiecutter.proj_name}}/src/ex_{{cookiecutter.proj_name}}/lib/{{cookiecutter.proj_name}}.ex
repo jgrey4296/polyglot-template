@@ -1,8 +1,8 @@
 # {{cookiecutter.proj_name}}.ex -*- mode: elixir -*-
 
-defmodule {{cookiecutter.proj_name|title}} do
+defmodule Ex{{cookiecutter.proj_name|title}} do
   @moduledoc """
-  Documentation for `{{cookiecutter.proj_name|title}}`.
+  Documentation for `Ex{{cookiecutter.proj_name|title}}`.
   """
 
   @doc """
