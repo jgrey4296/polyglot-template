@@ -1,0 +1,13 @@
+#  toc.yml -*- mode: YAML -*- 
+
+items: 
+  - name: intro
+    href: introduction.md
+  - name: Getting Started
+    href: getting-started.md
+  - name: contents
+    items:
+      - name: proj1
+        href: ../cs_{{cookiecutter.proj_name}}_exe/
+      - name: API
+        href: ../../.temp/dotnet/api/
