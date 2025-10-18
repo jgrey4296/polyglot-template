@@ -214,11 +214,7 @@ html_domain_indices    = []
 # html_logo            = ""
 # html_favicon         = ""
 # Generate additional domain specific indices
-html_domain_indices.append("py-modindex")
-html_additional_pages.update({})
-html_context.update({
-    "collapse_index_py": True,
-})
+# html_additional_pages.update({})
 
 ##-- end html
 
@@ -264,10 +260,18 @@ modindex_common_prefix                = [
     "polyglot.",
 ]
 python_maximum_signature_line_length  = None
-
+html_context.update({
+    "collapse_index_py": True,
+})
+match html_domain_indices:
+    case list():
+        html_domain_indices.append("py-modindex")
+    case _:
+        pass
 ##-- end python domain
 
 ##-- bibtex domain
+# extensions.append("sphinx_bib_domain")
 bib_domain_split_index = True
 ##-- end bibtex domain
 
@@ -525,8 +529,8 @@ else:
         jinja_env.add_extension("jinja2.ext.debug")
         jinja_env.tests['contains'] = filter_contains
 
-    # def add_jinja_ext(app):
-    #     app.builder.templates.environment.add_extension("jinja2.ext.debug")
+    def add_jinja_ext(app):
+        app.builder.templates.environment.add_extension("jinja2.ext.debug")
 
 ##-- end jinja customisation
 
