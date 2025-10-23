@@ -123,7 +123,7 @@ autoapi_template_dir  = "_data/templates/autoapi"
 autoapi_dirs          = ["."]
 # generate to here,
 # (sync with any toctree mention)
-autoapi_root          = "_sphinx/autoapi"
+autoapi_root          = "_sphinx/_autoapi"
 
 
 # load path modification:
@@ -183,6 +183,7 @@ exclude_patterns += [
     "**/flycheck_*.py",
     "*/_sphinx/conf.py",
     "**/test_integration.py",
+    "**/__examples/*",
     "README.md",
 ]
 

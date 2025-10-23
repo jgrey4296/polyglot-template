@@ -30,4 +30,4 @@ tortor.  Nam euismod tellus id erat.
    _sphinx/*
    genindex
    modindex
-   API Reference <./_sphinx/autoapi/{{cookiecutter.proj_name}}/index>
+   API Reference <./_sphinx/_autoapi/{{cookiecutter.proj_name}}/index>
