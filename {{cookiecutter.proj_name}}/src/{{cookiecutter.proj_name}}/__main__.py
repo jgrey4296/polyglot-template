@@ -8,22 +8,31 @@ from __future__ import annotations
 
 # Imports:
 # ##-- stdlib imports
+from copy import deepcopy
+from uuid import UUID, uuid1
+from weakref import ref
+from asyncio import Runner as AsyncRunner
+from asyncio import (
+     create_task, gather, sleep, timeout, shield,
+     to_thread, current_task, all_tasks,
+     TaskGroup,
+     CancelledError,
+)
+import asyncio
+import atexit
+import collections
+import contextlib
 import datetime
 import enum
+import faulthandler
 import functools as ftz
+import hashlib
 import itertools as itz
 import logging as logmod
 import pathlib as pl
 import re
 import time
-import collections
-import contextlib
-import hashlib
-from copy import deepcopy
-from uuid import UUID, uuid1
-from weakref import ref
-import atexit # for @atexit.register
-import faulthandler
+import sys
 # ##-- end stdlib imports
 
 # ##-- types
@@ -61,10 +70,19 @@ logging = logmod.getLogger(__name__)
 # Vars:
 
 # Body:
+def exit_handler():
+    print("Exiting")
+    return
+
+async def async_init ():
+      pass
 
 def main():
-    pass
+    atexit.register(exit_handler)
+    with AsyncRunner() as runner:
+         runner.run(async_init())
 
-# #--#
+##-- ifmain
 if __name__ == "__main__":
     main()
+##-- end ifmain
