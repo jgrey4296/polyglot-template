@@ -64,3 +64,11 @@ repos:
         stages: [pre-commit]
     -   id: detect-private-key
         stages: [pre-commit]
+    #  LFS integration -----------------------------------
+# -   repo: https://github.com/KAUTH/git-lfs-hooks
+#     rev: ''  # Use the SHA or tag that you want to point to
+#     hooks:
+#     -   id: post-checkout
+#     -   id: post-commit
+#     -   id: post-merge
+#     -   id: pre-push

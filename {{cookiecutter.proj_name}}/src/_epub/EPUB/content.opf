@@ -6,7 +6,7 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata">
         <dc:title>{{cookiecutter.proj_name}}</dc:title>
-        <dc:creator opf:file-as="{{cookiecutter.author}}" opf:role="aut">{{cookiecutter.author}}</dc:creator>
+        <dc:creator opf:file-as="{{cookiecutter._author}}" opf:role="aut">{{cookiecutter._author}}</dc:creator>
         <dc:language>en</dc:language>
         <!-- <dc:description></dc:description> -->
         <!-- <dc:subject></dc:subject> -->
