@@ -19,3 +19,5 @@ polyglot        https://github.com/jgrey4296/asdf-polyglot-cli.git
 plantuml	https://github.com/jgrey4296/asdf-plantuml.git
 soar		https://github.com/jgrey4296/asdf-soar.git
 texlive		https://github.com/jgrey4296/asdf-texlive.git
+godot           https://github.com/jgrey4296/asdf-godot.git
+opa             https://github.com/jgrey4296/asdf-opa.git
