@@ -1,23 +1,31 @@
-## docs.md -*- mode: gfm-mode -*-
+<!-- docs.md -*- mode: gfm-mode -*- -->
 <!--
 Summary:
 
 Tags:
 -->
 
+# Documentation Generation
 
-## Sphinx
+## [Sphinx](https://www.sphinx-doc.org/)
 
-## MdBook
+## [MdBook](https://rust-lang.github.io/mdBook/)
 
-## MdDocs
+## [RustDoc](https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html)
 
-## Readthedocs
+## [docfx](https://dotnet.github.io/docfx)
 
-## github pages
+# Deployment 
 
-## Changelog 
+## [Readthedocs](https://docs.readthedocs.io/en/stable/)
+
+## [github pages](https://github.com/actions/configure-pages)
+
+# Other
+## [TexLive](https://www.tug.org/texlive) / [LuaLatex](https://www.luatex.org/)
+
+## [Epub]
+
+## [Changelog] 
 
 ## Checklist
-
-## Latex

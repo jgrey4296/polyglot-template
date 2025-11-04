@@ -1,11 +1,11 @@
-## elixir.md -*- mode: gfm-mode -*-
+<!-- elixir.md -*- mode: gfm -*- -->
 <!--
 Summary:
 
 Tags:
 -->
 
-# Mix
+# [Mix](https://elixir-lang.org/)
 
 
 # .formatter.exs

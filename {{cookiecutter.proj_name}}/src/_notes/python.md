@@ -1,4 +1,4 @@
-## python.md -*- mode: gfm-mode -*-
+<!-- python.md -*- mode: gfm -*- -->
 <!--
 Summary:
 
@@ -6,7 +6,7 @@ Tags:
 -->
 
 
-# UV
+# [UV](https://github.com/astral-sh/uv)
 
 # pyproject.toml
 

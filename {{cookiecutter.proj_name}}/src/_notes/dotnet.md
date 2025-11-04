@@ -1,4 +1,4 @@
-## dotnet.md -*- mode: gfm-mode -*-
+<!-- dotnet.md -*- mode: gfm-mode -*- -->
 <!--
 Summary:
 
@@ -6,7 +6,7 @@ Tags:
 -->
 
 
-# Dotnet
+# [Dotnet](https://github.com/dotnet)
 
 ## adding new modules
 ```dotnet new {template} -o {dirname}```

@@ -1,4 +1,4 @@
-## rust.md -*- mode: gfm-mode -*-
+<!-- rust.md -*- mode: gfm -*- -->
 <!--
 Summary: 
 

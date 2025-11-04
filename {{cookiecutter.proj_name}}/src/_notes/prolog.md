@@ -1,8 +1,11 @@
-## prolog.md -*- mode: gfm-mode -*-
+<!-- prolog.md -*- mode: gfm -*- -->
 <!--
 Summary:
 
 Tags:
 -->
 
-# Swipl
+# [Swipl](https://www.swi-prolog.org/)
+
+
+# [Potassco](http://potassco.org/)

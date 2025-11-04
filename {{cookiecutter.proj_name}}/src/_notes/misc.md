@@ -1,18 +1,18 @@
-## misc.md -*- mode: gfm-mode -*-
+<!-- misc.md -*- mode: gfm -*- -->
 <!--
 Summary:
 
 Tags:
 -->
 
-# Direnv
+# [Direnv](https://direnv.net/)
 
-# editorconfig
-https://editorconfig.org/
+# [editorconfig](https://editorconfig.org/)
 
-# Pre-commit
+# [ASDF](https://asdf-vm.com/)
 
-# ASDF
+## ASDF plugin
+https://asdf-vm.com/plugins/create.html
 
 # .temp dir
 
@@ -20,8 +20,5 @@ https://editorconfig.org/
 
 # .related
 
-# Conventional commits
-https://www.conventionalcommits.org/en/v1.0.0/
+# [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
-# ASDF plugin
-https://asdf-vm.com/plugins/create.html

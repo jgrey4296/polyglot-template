@@ -1,10 +1,12 @@
-<!--  sclang.md -*- mode: markdown-mode -*-
-<!--  Summary:
-<!-- 
-<!--  Tags:
-<!--  -->
+<!--  sclang.md -*- mode: markdown-mode -*- -->
+<!--
+Summary: -->
 
-# Supercollider
+Tags:
+
+-->
+
+# [Supercollider](https://supercollider.github.io/)
 
 ## Enabling real time processing
 `dpkg-reconfigure -p high supercollider`

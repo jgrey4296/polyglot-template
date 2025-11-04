@@ -1,9 +1,11 @@
-## kotlin.md -*- mode: gfm-mode -*-
+<!-- kotlin.md -*- mode: gfm -*- -->
 <!--
 Summary:
 
 Tags:
 -->
+
+# [Kotlin](https://kotlinlang.org)
 
 # Kotlin-lsp
 
@@ -21,7 +23,7 @@ https://docs.gradle.org/current/userguide/kotlin_dsl.html
 
 ## .jcm
 
-# SDKMan
+# [SDKMan](https://sdkman.io/)
 
 # Android SDK
 - [Android Reference](https://developer.android.com/reference)

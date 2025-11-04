@@ -1,21 +1,16 @@
-## tasks.md -*- mode: gfm-mode -*-
+<!-- ## tasks.md -*- mode: gfm -*- -->
 <!--
 Summary:
 
-Tags:
+Tags: 
+
 -->
 
+# [Polyglot](https://github.com/jgrey4296/asdf-polyglot-cli)
+
 # Local
-
-## cargo-alldocs
-
-## cargo-do-release
-
-## cargo-install-dotnet
 
 ## x.gradle.kts
 
 # tox
-
-# .github workflow
 
