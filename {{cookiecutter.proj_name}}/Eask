@@ -1,0 +1,17 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
+(package "{{cookiecutter.proj_name}}-el"
+         "0.1.0"
+         "")
+
+(website-url "")
+(keywords )
+
+(package-file "src/el_{{cookiecutter.proj_name}}/{{cookiecutter.proj_name}}.el")
+(files "src/el_{{cookiecutter.proj_name}}/*.el")
+
+(script "test" "echo \"Error: no test specified\" && exit 1")
+
+(source "gnu")
+
+(depends-on "emacs" "30.2")
