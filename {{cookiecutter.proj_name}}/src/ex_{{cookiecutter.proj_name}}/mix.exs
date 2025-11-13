@@ -9,12 +9,13 @@ defmodule Ex{{cookiecutter.proj_name}}.MixProject do
       version: "0.1.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
 
       build_path: "../../.temp/elixir/build",
       config_path: "../../config.exs",
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
+      test_paths: ["__tests"],
 
     ]
   end

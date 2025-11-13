@@ -31,7 +31,7 @@ val projDir            = layout.projectDirectory
 plugins {
     id("java")
     id("maven-publish")
-    id("org.jetbrains.kotlin.jvm").version("1.9.10")
+    id("org.jetbrains.kotlin.jvm").version("2.0.21")
 }
 
 repositories {
@@ -80,7 +80,7 @@ sourceSets {
 
     create("jcmIntegration") {
         resources {
-            srcDir(projDir.dir("tests"))
+            srcDir(projDir.dir("__tests"))
             srcDir(projDir.dir("_configs"))
             srcDir(projDir.dir("agents"))
             srcDir(projDir.dir("environments"))
@@ -137,7 +137,7 @@ val proj_name   = "{{cookiecutter.proj_name}}"
 val jcm_file    = "{{cookiecutter.proj_name}}.jcm"
 val proj_path   = File(".")
 val log_props   = "_configs/logging.properties"
-val log_dir     = File(buildDir, "logs")
+val log_dir     = buildDir.dir("logs")
 val launcher    = "jacamo.infra.JaCaMoLauncher"
 
 defaultTasks("run")
@@ -155,10 +155,6 @@ tasks.register<JavaExec>("run") {
         projDir.file(jcm_file),
         "--log-conf", projDir.file(log_props)
     )
-    doFirst {
-        mkdir(log_dir)
-    }
-
     doFirst {
         mkdir(log_dir)
     }
@@ -238,7 +234,7 @@ tasks.register<Jar>("uberJar") {
 
 // Generate a Test Task for each jcm test file
 // TODO: maybe use the sourceset
-val jcmFiles = fileTree(projDir.dir("tests"))
+val jcmFiles = fileTree(projDir.dir("__tests"))
     .filter  { it.extension == "jcm"  }
 
 jcmFiles.forEach {
