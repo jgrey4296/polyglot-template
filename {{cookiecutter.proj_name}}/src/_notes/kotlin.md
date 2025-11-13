@@ -4,14 +4,14 @@ Summary:
 
 Tags:
 -->
+Directory Prefix: "kt_"
 
 # [Kotlin](https://kotlinlang.org)
 
 # Kotlin-lsp
 
-
 # [Gradle](https://docs.gradle.org/current/kotlin-dsl/index.html)
-https://docs.gradle.org/current/userguide/kotlin_dsl.html
+[Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
 
 ## build.gradle.kts
 
@@ -19,7 +19,11 @@ https://docs.gradle.org/current/userguide/kotlin_dsl.html
 
 ## settings.gradle.kts
 
-# Jacamo
+## gradle.properties
+
+## local.properties
+
+# [Jacamo](https://github.com/jacamo-lang/jacamo)
 
 ## .jcm
 
@@ -31,4 +35,4 @@ https://docs.gradle.org/current/userguide/kotlin_dsl.html
 - [ADB](https://developer.android.com/tools/adb)
 - [android gradle plugin](https://developer.android.com/reference/tools/gradle-api)
 - [android sdkmanager](https://developer.android.com/tools/sdkmanager)
-- [[https://developer.android.com/studio/publish/app-signing]]
+- [App Signing](https://developer.android.com/studio/publish/app-signing)

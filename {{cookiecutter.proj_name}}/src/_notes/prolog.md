@@ -4,6 +4,7 @@ Summary:
 
 Tags:
 -->
+Directory Prefixes: "pl_" and "asp_"
 
 # [Swipl](https://www.swi-prolog.org/)
 

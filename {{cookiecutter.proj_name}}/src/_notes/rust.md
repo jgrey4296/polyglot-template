@@ -1,9 +1,10 @@
 <!-- rust.md -*- mode: gfm -*- -->
 <!--
-Summary: 
+Summary:
 
 Tags:
 -->
+Directory Prefix: "rs_"
 
 # Cargo
 

@@ -4,17 +4,21 @@ Summary:
 
 Tags:
 -->
+Directory Prefix: "cs_" and "fs_"
 
 
 # [Dotnet](https://github.com/dotnet)
-
-## adding new modules
+# adding new modules
 ```dotnet new {template} -o {dirname}```
+from the project root.
 
+# adding new dependencies
+```dotnet nuget add```
 
-# nuget.config
+# Repo Config Files
+## nuget.config
 
-# Directory.Build.props
+## Directory.Build.props
 https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022
 
 use the following in a `Directory.Build.Props` to import higher up props files:
@@ -23,20 +27,20 @@ use the following in a `Directory.Build.Props` to import higher up props files:
 
 ```
 
-# Directory.Build.targets
-https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022
+## .sln
+Create with ```dotnet new sln```
+Modify with ```dotnet sln add {proj}```
 
-# Directory.Packages.props
+- https://learn.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file?view=vs-2022
 
-# preferred_profile.build
-
-# .csproj
+# Package Config Files
+## .csproj / .fsproj
 
 To have a root project and exclude a tests folder:
 
 ```xml
 <ItemGroup>
-    <Compile Remove="tests/*"/>
+    <Compile Remove="__tests/*"/>
 </ItemGroup>
 ```
 
@@ -53,10 +57,8 @@ While Test subprojects incude a reference:
 - https://learn.microsoft.com/en-us/visualstudio/msbuild/task-writing?view=vs-2022
 - https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-task-reference?view=vs-2022
 
-# .sln
-Create with ```dotnet new sln```
-Modify with ```dotnet sln add {proj}```
+## .suo
+## Directory.Build.targets
+https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022
 
-- https://learn.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file?view=vs-2022
-
-# .suo
+## Directory.Packages.props

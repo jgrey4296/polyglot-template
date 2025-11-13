@@ -4,8 +4,10 @@ Summary:
 
 Tags:
 -->
+Directory Prefix: "ex_"
 
 # [Mix](https://elixir-lang.org/)
+```mix help``` lists tasks.
 
 
 # .formatter.exs
@@ -13,4 +15,3 @@ Tags:
 # config.exs
 
 # mix.exs
-

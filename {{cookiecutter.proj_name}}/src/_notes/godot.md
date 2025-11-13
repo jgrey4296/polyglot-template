@@ -4,6 +4,7 @@ Summary:
 
 Tags:
 -->
+Directory Prefix: "gd_"
 
 # [Godot](https://godotengine.org)
 
@@ -19,8 +20,6 @@ Generating a keystore: `cargo polyglot keystore new {name}`.
 Set godot editor's:
 android sdk path = "$ANDROID_HOME"
 java sdk path    = "$JAVA_HOME"
-    
+
 Export templates:
 android.options.keystore.[release,release user, release password]
-    
-

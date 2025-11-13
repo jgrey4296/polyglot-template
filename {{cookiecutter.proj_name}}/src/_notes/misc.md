@@ -22,3 +22,13 @@ https://asdf-vm.com/plugins/create.html
 
 # [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
+
+# Misc Dependencies
+
+## [jq](https://jqlang.github.io/jq/)
+
+## cargo toml
+
+## rustup
+
+## uv

@@ -1,10 +1,11 @@
 <!--  sclang.md -*- mode: markdown-mode -*- -->
 <!--
-Summary: -->
+Summary:
 
 Tags:
 
 -->
+Directory Prefix: "sc_"
 
 # [Supercollider](https://supercollider.github.io/)
 
