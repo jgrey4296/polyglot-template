@@ -32,7 +32,41 @@ Or throught asdf: `asdf cmd godot test __tests`
 
 ## Kotlin
 ```gradle test```
-[JUnit](https://junit.org/junit5/)
+
+Basic Framework is:
+```kotlin
+import kotlin.test.Test
+import kotlin.test.assertEquals
+
+class BasicTests {
+
+    @Test
+    fun shouldDoMath() {
+        assertEquals(2, 2)
+    }
+
+}
+```
+
+While setting `build.gradle.kts`:
+```kotlin
+sourceSests {
+    test {
+        java {
+            sourceSets.main.get().java.srcDirs
+            srcDir(projDir.dir("__tests"))
+        }
+    }
+}
+
+dependencies {
+    testImplementation("org.jetbrains.kotlin:kotlin-test:2.2.21")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+```
 
 ## OPA
 
@@ -45,3 +79,21 @@ Or throught asdf: `asdf cmd godot test __tests`
 ## Rocq
 
 ## Dotnet
+Using xunit, modify a `.csproj` file:
+```xml
+<PropertyGroup>
+    <IsTestProject>true</IsTestProject>
+</PropertyGroup>
+
+<ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.5.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+</ItemGroup>
+
+<ItemGroup>
+<ProjectReference Include="$(MSBuildThisFileDirectory)../{proj_name}.csproj" />
+</ItemGroup>
+
+```

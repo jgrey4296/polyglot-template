@@ -6,6 +6,7 @@ Tags:
 
 -->
 Directory Prefix: "sc_"
+File Suffix: ".scd" / ".sc"
 
 # [Supercollider](https://supercollider.github.io/)
 
@@ -13,5 +14,5 @@ Directory Prefix: "sc_"
 `dpkg-reconfigure -p high supercollider`
 
 ## Links
-- https://docs.supercollider.online/
-- https://github.com/supercollider/scbookcode
+- [SC Docs](https://docs.supercollider.online/)
+- [SC Book Code](https://github.com/supercollider/scbookcode)

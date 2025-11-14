@@ -52,13 +52,27 @@ While Test subprojects incude a reference:
 ```
 
 
-- https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-project-file-schema-reference?view=vs-2022
-- https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2022
-- https://learn.microsoft.com/en-us/visualstudio/msbuild/task-writing?view=vs-2022
-- https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-task-reference?view=vs-2022
+- [MsBuild Project Schema](https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-project-file-schema-reference?view=vs-2022)
+- [MsBuild Properties](https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2022)
+- [MsBuild Task Writing](https://learn.microsoft.com/en-us/visualstudio/msbuild/task-writing?view=vs-2022)
+- [MsBuild Task Reference](https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-task-reference?view=vs-2022)
+
+### Versioning
+When packaging with `dotnet pack` into a nuget package,
+add to a .[cf]sproj file:
+
+```xml
+<PropertyGroup>
+<Version>{}</Version>
+</PropertyGroup>
+```
+
+see [Dotnet Docs](https://learn.microsoft.com/en-us/nuget/create-packages/creating-a-package-dotnet-cli)
+
 
 ## .suo
 ## Directory.Build.targets
-https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022
+
+- [MSBuild Customize by Directory](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory?view=vs-2022)
 
 ## Directory.Packages.props

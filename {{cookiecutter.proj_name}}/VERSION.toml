@@ -29,4 +29,8 @@ expr = 'version\s+=\s+"(.*)"'
 file = "mix.exs"
 expr = 'version:\s+"(.*)"'
 
+[[files]]
+file = "Eask"
+expr = '\(defvar version "(.*)"\)'
+
 [package]

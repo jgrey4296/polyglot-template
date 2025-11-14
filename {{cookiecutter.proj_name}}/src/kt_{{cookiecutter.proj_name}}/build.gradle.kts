@@ -32,7 +32,7 @@ plugins {
     id("java")
     // id("java-library")
     id("maven-publish")
-    id("org.jetbrains.kotlin.jvm").version("2.0.21")
+    id("org.jetbrains.kotlin.jvm").version("2.2.21")
     `jvm-test-suite`
 }
 
@@ -101,10 +101,8 @@ configurations {
 ////-- dependencies
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
-    // testImplementation(platform("org.junit:junit-bom:6.0.1"))
-    // testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.21")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:2.2.21")
 }
 
 ////-- end dependencies

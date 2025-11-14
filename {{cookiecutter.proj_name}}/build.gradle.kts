@@ -2,7 +2,7 @@
 /*
  {{cookiecutter.proj_name}}
 
- Gradle build file for JaCaMo Applications
+ Root Gradle build file
  October 18, 2023 - 00:59:47
 
  https://docs.gradle.org/current/kotlin-dsl/
@@ -28,7 +28,8 @@
 plugins {
     id("java")
     id("maven-publish")
-    id("org.jetbrains.kotlin.jvm").version("2.0.21")
+    // For insisting on a specific version across sub pacakges:
+    // id("org.jetbrains.kotlin.jvm").version("2.0.21")
 
     // Android
     id("com.android.application").version("8.12.3")
