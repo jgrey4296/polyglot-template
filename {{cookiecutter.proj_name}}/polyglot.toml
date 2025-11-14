@@ -160,6 +160,12 @@ config    = []
 prefix    = "opa_"
 active    = []
 
+[polyglot.soar]
+suffixes  = [".soar", ".vsa"]
+config    = []
+prefix    = "soar_"
+active    = []
+
 
 #  Docgen --------------------------------------------------
 

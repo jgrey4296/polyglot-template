@@ -28,7 +28,7 @@
 plugins {
     id("java")
     id("maven-publish")
-    // For insisting on a specific version across sub pacakges:
+    // For insisting on a specific version across sub pacakges, uncomment:
     // id("org.jetbrains.kotlin.jvm").version("2.0.21")
 
     // Android

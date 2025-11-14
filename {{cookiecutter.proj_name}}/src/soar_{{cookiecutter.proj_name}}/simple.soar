@@ -1,0 +1,8 @@
+# simple.soar -*- mode: soar -*-
+
+sp {hello-world
+   (state <s> ^type state)
+   -->
+   (write |Hello Blah|)
+   (halt)
+}

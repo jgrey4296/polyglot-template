@@ -75,3 +75,9 @@ csharp_style_namespace_declarations  = file_scoped
 [*.{yml,yaml}]
 
 [*.toml]
+
+[Makefile]
+indent_style = tab
+
+[makefile]
+indent_style = tabe
