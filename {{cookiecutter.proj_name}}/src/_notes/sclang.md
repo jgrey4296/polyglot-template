@@ -13,6 +13,10 @@ File Suffix: ".scd" / ".sc"
 ## Enabling real time processing
 `dpkg-reconfigure -p high supercollider`
 
+## Starting on Linux
+Needs JACK to be set to use JACK-dbus,
+and device to be changed from 'default' to the correct device.
+
 ## Links
 - [SC Docs](https://docs.supercollider.online/)
 - [SC Book Code](https://github.com/supercollider/scbookcode)

@@ -3,10 +3,24 @@
 #
 #  '{}' in a string refers to the project name
 #  eg: project 'blah', {}.sln -> blah.sln
+#
+#  Each entry can contain:
+#  files[list], dirs[list], config[list]
+#  suffixes[list], prefix[str]
+#  active[list]
+#  ignore[list]
+#  -- 
+#
+#  'ignore' provides a list of patterns to add/remove to a gitignore file.
 #  Tags:
 #
 
 [polyglot]
+# For settings
+
+[polyglot.aliases]
+
+
 
 [polyglot.general]
 files = [
@@ -55,7 +69,7 @@ active    = []
 suffixes  = [".rs"]
 config    = [
           "build.rs", "Cargo.toml", ".cargo/config.toml",
-          "clippy.toml" "rust-toolchain.toml", ".rustfmt.toml",
+          "clippy.toml", "rust-toolchain.toml", ".rustfmt.toml",
           "Cargo.lock",
 ]
 prefix    = "rs_"
@@ -89,7 +103,7 @@ active    = []
 
 [polyglot.elixir]
 suffixes  = [".exs", ".ex"]
-config    = ["mix.ex" "config.exs", ".formatter.exs"]
+config    = ["mix.ex", "config.exs", ".formatter.exs"]
 prefix    = "ex_"
 active    = []
 
@@ -188,7 +202,7 @@ dirs      = ["_docfx"]
 active    = []
 
 [polyglot.docgen.tex]
-suffixes  = [".tex", ".bib"]
+suffixes  = [".tex", ".bib", ".lua"]
 config    = ["init.tex.lua", "tex.reqs"]
 dirs      = ["_tex"]
 active    = []
