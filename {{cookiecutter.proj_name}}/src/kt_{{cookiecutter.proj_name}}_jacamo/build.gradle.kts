@@ -21,26 +21,28 @@
 // - java.io.File
 // - javax.inject.Inject
 import java.io.ByteArrayOutputStream
-
+import org.jetbrains.dokka.gradle.tasks.DokkaGenerateTask
 ////-- end imports
 
 val buildDir           = layout.buildDirectory
 val projDir            = layout.projectDirectory
 
 ////-- plugins
-plugins {
-    id("java")
-    id("maven-publish")
-    id("org.jetbrains.kotlin.jvm").version("2.2.21")
-}
-
 repositories {
     maven("https://raw.githubusercontent.com/jacamo-lang/mvn-repo/master")
     maven("https://repo.gradle.org/gradle/libs-releases")
     maven("https://jitpack.io")
     mavenCentral()
+    google()
+    gradlePluginPortal()
 }
 
+plugins {
+    id("java")
+    id("maven-publish")
+    id("org.jetbrains.kotlin.jvm").version("2.2.21")
+    id("org.jetbrains.dokka").version("2.1.0")
+}
 ////-- end plugins
 
 ////-- toolchains
@@ -278,7 +280,11 @@ tasks.test {
     finalizedBy("testJaCaMo")
 }
 
-// TODO Doc --------------------------------------------------
+// Doc --------------------------------------------------
+
+tasks.withType<DokkaGenerateTask>().configureEach {
+    outputDirectory = rootProject.layout.buildDirectory.dir("docs/kotlin")
+}
 
 // jason.util.asl2dot
 // jason.util.asl2html
