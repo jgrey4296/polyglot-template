@@ -14,8 +14,14 @@ ksmps   = 64
 nchnls  = 2
 0dbfs   = 1
 
+instr Hello
+  aSine = poscil:a(0.2, p4)
+  outall(aSine)  
+endin
+
 </CsInstruments>
 <CsScore>
-
+i "Hello" 0 2 400
+i "Hello" 2 2 500
 </CsScore>
 </CsoundSynthesizer>
