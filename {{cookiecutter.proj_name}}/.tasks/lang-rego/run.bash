@@ -53,8 +53,8 @@ function handle-result () {
 }
 
 function run-program () {
-    echo "TODO"
-    # opa eval -d {file.rego} -i {data.json} "{query}"
+    fail "TODO: opa"
+    # opa eval -d {file.rego} -i {data.json} "{query}" | tee "$POLYGLOT_TEMP/rego/$target-file.result"
 }
 
 function main () {

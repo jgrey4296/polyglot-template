@@ -76,7 +76,7 @@ function handle-result () {
             exit 0
             ;;
         10) # rerun, output as json
-            run-clingo 1 "$@"
+            run-program 1 "$@"
             exit 0 ;;
         11) subhead "Interrupted but consistent"
             exit 0
@@ -92,7 +92,7 @@ function handle-result () {
     esac
 }
 
-function run-clingo () {
+function run-program () {
     out_switch="$1"
     target="$2"
     file="$3"
@@ -129,7 +129,7 @@ function main () {
                 )
 
     check-target "$target" "$file"
-    run-clingo 0 "$target" "$file" "${CLINGO_ARGS[@]}"
+    run-program 0 "$target" "$file" "${CLINGO_ARGS[@]}"
     handle-result "$?" "$target" "$file" "${CLINGO_ARGS[@]}"
     exit "$?"
 }

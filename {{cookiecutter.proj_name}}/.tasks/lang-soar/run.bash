@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
-set -euo pipefail
+#set -o errexit
+set -o nounset
+set -o pipefail
 
-SRC=shift
-soar -s "$SRC" "${@:-}"
+# shellcheck disable=SC1091
+source "$POLY_SRC/lib/lib-util.bash"
+if [[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]]; then
+    # shellcheck disable=SC1091
+    source "$POLYGLOT_ROOT/.tasks/task-util.bash"
+fi
+
+shift
+target="$1"
+file="$2"
+shift 2
+soar -s "$POLYGLOT_SRC/$target/$file" "${@:-}"
