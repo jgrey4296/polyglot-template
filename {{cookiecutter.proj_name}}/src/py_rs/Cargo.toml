@@ -1,8 +1,8 @@
 # #  Cargo.toml -*- mode: TOML -*-
 
 [package]
-name                     = "{{cookiecutter.proj_name}}_bridge_el"
-description              = "a bridge to lisp for {{cookiecutter.proj_name}}"
+name                     = "{{cookiecutter.proj_name}}_bridge_py_rs"
+description              = "a rust bridge to python for {{cookiecutter.proj_name}}"
 version.workspace        = true
 edition.workspace        = true
 rust-version.workspace   = true
@@ -16,8 +16,8 @@ license.workspace        = true
 workspace                = true
 
 [dependencies]
-emacs.workspace                          = true
-{{cookiecutter.proj_name}}_rs.workspace  = true
+pyo3.workspace          = true
+{{cookiecutter.proj_name}}_lib_rs.workspace  = true
 
 [dev-dependencies]
 
@@ -31,7 +31,9 @@ default = []
 dist = true
 
 [lib]
-name               = "{{cookiecutter.proj_name}}_bridge_el"
+# name needs to match module name in lib.rs
+name               = "_rust"
+path               = "src/lib.rs"
 crate-type         = ["cdylib"]
 proc-macro         = false
 required-features  = []

@@ -1,5 +1,5 @@
 [package]
-name                     = "{{cookiecutter.proj_name}}_bridge_c"
+name                     = "{{cookiecutter.proj_name}}_bridge_c_rs"
 version                  = "0.1.0"
 description              = "rust to c lang bridge for {{cookiecutter.proj_name}}"
 edition.workspace        = true

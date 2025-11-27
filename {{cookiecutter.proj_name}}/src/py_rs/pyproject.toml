@@ -1,9 +1,9 @@
 # #  pyproject.toml -*- mode: TOML -*-
 
 [project]
-name         = "{{cookiecutter.proj_name}}_bridge_rs"
+name         = "{{cookiecutter.proj_name}}_bridge_py_rs"
 version      = "0.1.0"
-description  = "Python Submodule for project to handle rust interaction"
+description  = "Python Submodule for {{cookiecutter.proj_name}} to handle rust interaction"
 readme       = {workspace = true}
 authors      = [
     { name   = "John Grey", email = "johngrey4296@gmail.com" }
@@ -21,11 +21,11 @@ build-backend = "maturin"
 # compatibility  = "pypi"
 bindings         = "pyo3"  
 features         = ["pyo3/extension-module"]
-manifest-path    = "../rs_bridge_py/Cargo.toml"
-module-name      = "{{cookiecutter.proj_name}}_dep._rust"
+manifest-path    = "Cargo.toml"
+module-name      = "{{cookiecutter.proj_name}}_bridge_py_rs._rust"
 
-python-packages  = ["{{cookiecutter.proj_name}}_dep"]
 python-source    = "src"
+python-packages  = ["{{cookiecutter.proj_name}}_bridge_py_rs"]
 
 include          = ["*.so"]
 exclude          = ["**_tests"]

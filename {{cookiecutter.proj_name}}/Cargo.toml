@@ -3,7 +3,7 @@
 
 [workspace]
 resolver         = "3"
-members          = ["src/rs_*"]
+members          = ["src/rs_*", "src/py_rs"]
 default-members  = ["src/rs_bin", "src/rs_lib"]
 exclude          = [
     "src/_*",
@@ -14,7 +14,7 @@ exclude          = [
 version        = "0.1.0"
 rust-version   = "{{cookiecutter.channel}}"
 edition        = "{{cookiecutter.edition}}"
-authors        = [ "{{cookiecutter._author}}"]
+authors        = ["{{cookiecutter._author}}"]
 homepage       = "https://{{cookiecutter.proj_name}}.readthedocs.io"
 documentation  = "https://{{cookiecutter.proj_name}}.readthedocs.io"
 repository     = "https://github.com/jgrey4296/{{cookiecutter.proj_name}}"
@@ -23,16 +23,16 @@ license        = "ACAB"
 ##-- dependencies
 [workspace.dependencies]
 # Internal deps:
-# lib                                 = { path="src/rs_lib", default-features=false, features=[] }
-{{cookiecutter.proj_name}}_rs         = {path="src/rs_bin"}
-{{cookiecutter.proj_name}}_lib_rs     = {path="src/rs_lib"}
-{{cookiecutter.proj_name}}_bridge_c   = {path="src/rs_bridge_c"}
-{{cookiecutter.proj_name}}_bridge_el  = {path="src/rs_bridge_el"}
-{{cookiecutter.proj_name}}_bridge_py  = {path="src/rs_bridge_py"}
-{{cookiecutter.proj_name}}_macros     = {path="src/rs_macros"}
+# lib                                    = { path="src/rs_lib", default-features=false, features=[] }
+{{cookiecutter.proj_name}}_rs            = {path="src/rs_bin"}
+{{cookiecutter.proj_name}}_lib_rs        = {path="src/rs_lib"}
+{{cookiecutter.proj_name}}_bridge_c_rs   = {path="src/rs_c"}
+{{cookiecutter.proj_name}}_bridge_el_rs  = {path="src/rs_el"}
+{{cookiecutter.proj_name}}_macros        = {path="src/rs_macros"}
+{{cookiecutter.proj_name}}_bridge_py_rs  = {path="src/py_rs"}
 
 # External deps:
-# lib                                 = { version="1.0" }
+# lib                                    = { version="1.0" }
 
 ## For Macros
 proc-macro2  = "1.0.101"

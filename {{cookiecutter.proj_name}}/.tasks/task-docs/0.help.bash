@@ -15,10 +15,7 @@ function print-help () {
     # print help and exit
     case "${@: -1}" in
         -h|--help) ;;
-        *) if [[ "$#" -gt 0 ]]; then
-               return
-           fi
-           ;;
+        *) return ;;
     esac
     echo -e "
 usage: polyglot task docs [args ...] [-h]

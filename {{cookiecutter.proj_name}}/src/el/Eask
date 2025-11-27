@@ -9,8 +9,8 @@
 (website-url "")
 (keywords )
 
-(package-file "src/el_{{cookiecutter.proj_name}}/{{cookiecutter.proj_name}}.el")
-(files "src/el_{{cookiecutter.proj_name}}/*.el")
+(package-file "{{cookiecutter.proj_name}}.el")
+(files "*.el")
 
 (script "test" "echo \"Error: no test specified\" && exit 1")
 
