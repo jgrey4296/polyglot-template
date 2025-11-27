@@ -11,7 +11,7 @@
 // //--// standard imports
 use proc_macro::TokenStream;
 use quote::quote;
-use syn::{Attribute, DeriveInput, ImplItem, ItemImpl, LitStr, parse_macro_input};
+use syn::{Attribute, DeriveInput, LitStr, parse_macro_input};
 // //--// end standard imports
 
 #[proc_macro_derive(Example)]

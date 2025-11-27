@@ -20,7 +20,7 @@ classifiers     = [
 
 ##-- dependencies
 dependencies   = [
-    "{{cookiecutter.proj_name}}_bridge_rs",
+    "{{cookiecutter.proj_name}}_bridge_py_rs",
 ]
 
 [dependency-groups]
@@ -58,7 +58,7 @@ docs = [
 
 [tool.uv.sources]
 # dep-name = {workspace=true}
-{{cookiecutter.proj_name}}_bridge_rs = {workspace=true}
+{{cookiecutter.proj_name}}_bridge_py_rs = {workspace=true}
 
 [tool.uv.workspace]
 members = ["src/py_*"]
