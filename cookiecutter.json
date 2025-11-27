@@ -1,6 +1,7 @@
 {
   "proj_name": "polyglot project template",
   "edition": "2024",
+  "channel": "1.88",
   "entry_point": "__main__",
   "python": "3.12",
   "_author": "me",

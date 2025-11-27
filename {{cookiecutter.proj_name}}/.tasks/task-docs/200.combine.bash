@@ -40,7 +40,7 @@ function main () {
     fname=$(basename "${BASH_SOURCE[0]}")
     header "($HOOK_NUM): $fname.\n* Args: " "$@"
 
-    fail "TODO: hook implementation"
+    fail "TODO: docs combination"
 }
 
 main "$@"

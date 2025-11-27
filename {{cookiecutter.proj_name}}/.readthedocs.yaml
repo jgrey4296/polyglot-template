@@ -7,7 +7,7 @@
 version: 2
 
 sphinx:
-  configuration: src/_docs/conf.py
+  configuration: "$POLYGLOT_SPHINX_CONF_DIR/conf.py"
 
 build:
   os: ubuntu-22.04
@@ -29,7 +29,7 @@ build:
         - >
           { direnv allow;
           direnv exec .
-          polyglot docs --sphinx;
+          polyglot task docs ;
           }
         - mkdir -p $READTHEDOCS_OUTPUT/html
-        - mv ./temp/docs/sphinx/* "$READTHEDOCS_OUTPUT/html"
+        - mv "$POLYGLOT_DOCS" "$READTHEDOCS_OUTPUT/html"

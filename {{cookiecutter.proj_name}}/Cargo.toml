@@ -4,24 +4,15 @@
 [workspace]
 resolver         = "3"
 members          = ["src/rs_*"]
-default-members  = ["src/rs_{{cookiecutter.proj_name}}"]
+default-members  = ["src/rs_bin", "src/rs_lib"]
 exclude          = [
     "src/_*",
     "src/_docs",
-    "src/c_*",
-    "src/cs_*", 
-    "src/el_*",
-    "src/ex_*",
-    "src/gd_*",
-    "src/kt_*",
-    "src/pl_*",
-    "src/py_*",
-    "src/rq_*",     
 ]
 
 [workspace.package]
 version        = "0.1.0"
-rust-version   = "1.86"
+rust-version   = "{{cookiecutter.channel}}"
 edition        = "{{cookiecutter.edition}}"
 authors        = [ "{{cookiecutter._author}}"]
 homepage       = "https://{{cookiecutter.proj_name}}.readthedocs.io"

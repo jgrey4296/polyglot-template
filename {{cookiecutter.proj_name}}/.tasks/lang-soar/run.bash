@@ -10,8 +10,9 @@ if [[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]]; then
     source "$POLYGLOT_ROOT/.tasks/task-util.bash"
 fi
 
+DEFAULT_FILE="main.soar"
 shift
 target="$1"
-file="$2"
+file="${2:-$DEFAULT_FILE}"
 shift 2
 soar -s "$POLYGLOT_SRC/$target/$file" "${@:-}"

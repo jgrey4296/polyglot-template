@@ -47,7 +47,7 @@ function main () {
 
     subhead "[rocq] Running Doc"
     # https://rocq-prover.org/doc/V9.0.0/refman/using/tools/coqdoc.html
-    echo "TODO"
+    todo "TODO: rocq"
     # rocq doc --HTML --LaTeX -d "$DOC_OUT/rocq"
 }
 

@@ -1,7 +1,7 @@
 ## .rustfmt.toml -*- mode: Toml -*-
 # https://rust-lang.github.io/rustfmt/?version=v0.8.0
-edition                       = "2024"
-style_edition                 = "2024"
+edition                       = "{{cookiecutter.edition}}"
+style_edition                 = "{{cookiecutter.edition}}"
 unstable_features             = false
 
 binop_separator               = "Front"

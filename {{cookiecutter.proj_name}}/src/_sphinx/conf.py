@@ -65,8 +65,9 @@ intersphinx_timeout      : int | float | None
 extlinks : dict[str, tuple[str, str]]
 ##-- end types
 
+from os import environ
 
-_target = pl.Path.cwd() / "../../pyproject.toml"
+_target = pl.Path(environ["POLYGLOT_ROOT"])
 assert(_target.exists())
 pyproject  = tomllib.loads(_target.read_text())
 

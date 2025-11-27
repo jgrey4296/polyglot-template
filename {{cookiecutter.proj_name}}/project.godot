@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="{{cookiecutter.proj_name}}"
-run/main_scene="res://src/gd_{{cookiecutter.proj_name}}/scenes/main_scene.tscn"
+run/main_scene="res://src/gd/scenes/main_scene.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://src/gd_{{cookiecutter.proj_name}}/sprites/icon.svg"
+config/icon="res://src/gd/sprites/icon.svg"
 
 [display]
 

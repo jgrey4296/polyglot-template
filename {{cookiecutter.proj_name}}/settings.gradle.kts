@@ -4,9 +4,10 @@
 rootProject.name = "{{cookiecutter.proj_name}}"
 
 // path separator ':'
-include(":kt_{{cookiecutter.proj_name}}")
+include(":kt_basic")
 
-project(":kt_{{cookiecutter.proj_name}}").projectDir = File("src/kt_{{cookiecutter.proj_name}}")
+project(":kt_basic").projectDir = File("src/kt")
+project(":kt_jacamo").projectDir = File("src/kt_jacamo")
 
 buildcache {
     local {

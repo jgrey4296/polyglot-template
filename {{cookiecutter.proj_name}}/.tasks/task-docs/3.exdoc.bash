@@ -47,7 +47,7 @@ function main () {
     header "($HOOK_NUM): $fname.\n* Args: " "$@"
 
     subhead "[elixir] Building ExDoc"
-    mix docs --output "$DOC_OUT/elixir"
+    mix docs --output "$POLYGLOT_DOCS/elixir"
 }
 
 main "$@"

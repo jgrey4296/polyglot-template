@@ -48,7 +48,6 @@ function main () {
 
     subhead "[kotlin] Running Dokka"
     # https://kotlinlang.org/docs/dokka-cli.html
-    echo "TODO"
     # java -jar dokka-cli-2.0.0.jar "$@" "$POLYGLOT_ROOT/dokka.json"
     gradle dokkaGenerateHtml
 }

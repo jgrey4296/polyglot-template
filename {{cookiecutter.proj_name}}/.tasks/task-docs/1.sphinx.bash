@@ -23,6 +23,7 @@ function check () {
 }
 
 function main () {
+    SPHINX_OUT="$POLYGLOT_DOCS/sphinx"
 
     # Parse args:
     while [[ $# -gt 0 ]]; do

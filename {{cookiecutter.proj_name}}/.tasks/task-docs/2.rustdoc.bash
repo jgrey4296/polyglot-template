@@ -20,6 +20,9 @@ function check () {
     if [[ ! -e "$POLYGLOT_ROOT/Cargo.toml" ]]; then
         fail "NOT FOUND: $POLYGLOT_ROOT/Cargo.toml"
     fi
+    if [[ ! -d "$POLYGLOT_DOCS" ]]; then
+        fail "NOT FOUND: $POLYGLOT_DOCS"
+    fi
 }
 
 function main () {
@@ -50,7 +53,7 @@ function main () {
     subhead "[rust] Building Rustdoc"
     cargo doc \
         --workspace \
-        --target-dir "$DOC_OUT/rustdoc"
+        --target-dir "$POLYGLOT_DOCS/rustdoc"
 }
 
 main "$@"

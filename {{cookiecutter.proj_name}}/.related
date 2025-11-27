@@ -31,10 +31,11 @@
 
 ;; Source sublocs
 :src           : src
-:py            : src/py_{{cookiecutter.proj_name}}
-:macros        : src/rs_{{cookiecutter.proj_name}}_macros
-:el            : src/el_{{cookiecutter.proj_name}}
-:rust          : src/rs_{{cookiecutter.proj_name}}
-:py-bridge     : src/rs_{{cookiecutter.proj_name}}_bridge_py
-:el-bridge     : src/rs_{{cookiecutter.proj_name}}_bridge_el
-:jacamo        : src/kt_{{cookiecutter.proj_name}}
+:py            : src/py
+:macros        : src/rs_macros
+:el            : src/el
+:rust          : src/rs
+:py-bridge     : src/rs_bridge_py
+:el-bridge     : src/rs_bridge_el
+:jacamo        : src/kt_jacamo
+:kotlin        : src/kt

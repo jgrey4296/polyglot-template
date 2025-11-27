@@ -16,7 +16,7 @@ defmodule {{cookiecutter.proj_name|title}}.MixProject do
 
       apps_path:   "src",
       deps_path: "./.temp/elixir/deps",
-      build_path:  ".temp/elixir/build",
+      build_path:  "./.temp/elixir/build",
       config_path: "./config.exs",
       lockfile: "./mix.lock",
 

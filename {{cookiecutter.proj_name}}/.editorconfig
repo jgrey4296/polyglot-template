@@ -80,4 +80,4 @@ csharp_style_namespace_declarations  = file_scoped
 indent_style = tab
 
 [makefile]
-indent_style = tabe
+indent_style = tab

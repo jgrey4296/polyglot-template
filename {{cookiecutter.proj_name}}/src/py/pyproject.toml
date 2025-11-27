@@ -1,0 +1,38 @@
+# #  pyproject.toml -*- mode: TOML -*-
+
+[project]
+name         = "{{cookiecutter.proj_name}}"
+version      = "0.1.0"
+description  = "Main Python package for {{cookiecutter.proj_name}}"
+readme       = {workspace = true}
+authors      = [
+    { name   = "John Grey", email = "johngrey4296@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+# [project.scripts]
+# [project.gui-scripts]
+# [project.entry-points."something"]
+
+##-- build-system
+[build-system]
+requires       = ["hatchling>=1.13"]
+build-backend  = "hatchling.build"
+
+[tool.hatch.build]
+skip-excluded-dirs  = true
+# directory         = ".temp/build"  # or HATCH_BUILD_LOCATION
+packages            = ["{{cookiecutter.proj_name}}"]
+artifacts           = ["*.so"]
+exclude             = [
+    ".temp", "**.rst",
+    "**_tests",
+    "**_docs",
+]
+
+
+[tool.hatch.build.targets.sdist]
+[tool.hatch.build.targets.wheel]
+
+##-- end build-system

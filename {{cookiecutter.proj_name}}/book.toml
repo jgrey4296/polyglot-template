@@ -9,7 +9,7 @@ language      = "en"
 multilingual  = false
 
 [rust]
-edition       = "2024"
+edition       = "{{cookiecutter.edition}}"
 
 [build]
 build-dir                  = ".temp/docs/book"

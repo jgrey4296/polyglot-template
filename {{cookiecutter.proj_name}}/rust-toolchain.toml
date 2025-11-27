@@ -2,6 +2,6 @@
 # https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file
 [toolchain]
 # channel   = "nightly-x86_64-unknown-linux-gnu"
-channel     = "1.88"
+channel     = "{{cookiecutter.channel}}"
 components  = ["rustfmt", "clippy", "rust-analyzer", "rustc", "cargo", "rust-std", "rust-docs"]
 targets     = []
