@@ -1,6 +1,6 @@
 //  lib.rs -*- mode: rust -*-
 use pyo3::prelude::*;
-use {{cookiecutter.proj_name}}_rs;
+use {{cookiecutter.proj_name}}_lib_rs;
 
 // module name needs to match lib.name in cargo.toml
 #[pymodule]

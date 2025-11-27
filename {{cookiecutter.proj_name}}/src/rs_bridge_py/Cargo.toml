@@ -17,7 +17,7 @@ workspace                = true
 
 [dependencies]
 pyo3.workspace                           = true
-{{cookiecutter.proj_name}}_rs.workspace  = true
+{{cookiecutter.proj_name}}_lib_rs.workspace  = true
 
 [dev-dependencies]
 

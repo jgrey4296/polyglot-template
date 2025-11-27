@@ -1,7 +1,7 @@
 # Cargo.toml -*- mode: Toml -*- 
 
 [package]
-name                     = "{{cookiecutter.proj_name}}_rs"
+name                     = "{{cookiecutter.proj_name}}_lib_rs"
 version                  = "0.1.0"
 description              = "rust library crate for {{cookiecutter.proj_name}}"
 edition.workspace        = true
@@ -20,6 +20,7 @@ dist                     = true
 default = []
 
 [dependencies]
+{{cookiecutter.proj_name}}_macros.workspace  = true
 
 [dev-dependencies]
 

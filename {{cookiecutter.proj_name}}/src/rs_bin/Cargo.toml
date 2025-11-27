@@ -20,6 +20,7 @@ dist                     = true
 default = []
 
 [dependencies]
+{{cookiecutter.proj_name}}_lib_rs.workspace  = true
 
 [dev-dependencies]
 

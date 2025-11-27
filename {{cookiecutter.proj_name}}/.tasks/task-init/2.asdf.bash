@@ -41,7 +41,7 @@ function main () {
     header "($HOOK_NUM): $fname.\n* Args: " "$@"
 
     # asdf plugin add
-    if [[ -e "$ASDF_PLUGIN_LIST" ]]; then
+    if [[ -e "${ASDF_PLUGIN_LIST:-}" ]]; then
         tdot "Initialising extra asdf plugins"
         while read -r pname url; do
             if [[ -n "$pname" ]]; then

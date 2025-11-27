@@ -31,8 +31,8 @@ options:
 
 
 "
-    return "PRINTED_HELP:-2"
-    # exit "PRINTED_HELP:-2"
+    return "${PRINTED_HELP:-2}"
+    # exit "${PRINTED_HELP:-2}"
 }
 
 function check-environment () {

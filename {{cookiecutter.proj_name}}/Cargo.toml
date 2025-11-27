@@ -23,11 +23,16 @@ license        = "ACAB"
 ##-- dependencies
 [workspace.dependencies]
 # Internal deps:
-# lib = { path="src/rs_lib", default-features=false, features=[] }
-{{cookiecutter.proj_name}}_rs = {path="src/rs_{{cookiecutter.proj_name}}"}
+# lib                                 = { path="src/rs_lib", default-features=false, features=[] }
+{{cookiecutter.proj_name}}_rs         = {path="src/rs_bin"}
+{{cookiecutter.proj_name}}_lib_rs     = {path="src/rs_lib"}
+{{cookiecutter.proj_name}}_bridge_c   = {path="src/rs_bridge_c"}
+{{cookiecutter.proj_name}}_bridge_el  = {path="src/rs_bridge_el"}
+{{cookiecutter.proj_name}}_bridge_py  = {path="src/rs_bridge_py"}
+{{cookiecutter.proj_name}}_macros     = {path="src/rs_macros"}
 
 # External deps:
-# lib        = { version="1.0" }
+# lib                                 = { version="1.0" }
 
 ## For Macros
 proc-macro2  = "1.0.101"
