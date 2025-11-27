@@ -1,4 +1,4 @@
-% data.pl -*- mode: Prolog -*-
+% basic.pl -*- mode: Prolog -*-
 
 %% people
 person(bob).

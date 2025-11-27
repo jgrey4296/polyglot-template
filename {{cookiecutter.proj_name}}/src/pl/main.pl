@@ -1,4 +1,4 @@
-#!/usr/bin/env -S swipl
+#!/usr/bin/env -S swipl -t halt
 %% -t halt : stops entering the repl
 %% from https://stackoverflow.com/questions/25467090
 
@@ -6,8 +6,8 @@
 %% :- set_prolog_flag(verbose, silent).
 :- initialization main.
 %% Load other files:
-:- [data].
-:- [rules].
+:- use_module(src/rules).
+:- [data/basic].
 
 main :-
     current_prolog_flag(argv, [Argv|_]),

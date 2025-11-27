@@ -1,5 +1,8 @@
 % rules.pl -*- mode: Prolog -*-
-% %-- rules
+:- module({{cookiecutter.proj_name}}_rules,
+          [
+              getPairedPerson/2
+          ]).
 
 getPairedPerson(X, Y) :- person(X),
                          place(Y),
