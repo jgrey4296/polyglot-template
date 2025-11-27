@@ -51,7 +51,6 @@ function handle-result () {
 function run-program () {
     target="$1"
     shift
-    fail "TODO: Godot test"
     _ARGS=("--headless"
            "--debug"
            "--upwards"
@@ -68,15 +67,10 @@ function main () {
     subhead "Parsing Args"
     shift
     target="$1"
-    case "$2" in
-        --) file="$DEFAULT_FILE" ;;
-        *)  file="$2" ;;
-    esac
-    shift 2
+    shift 1
     _ARGS=("$@")
-    check-target "$target" "$file"
-    run-program 0 "$target" "$file" "${_ARGS[@]}"
-    handle-result "$?" "$target" "$file" "${_ARGS[@]}"
+    run-program 0 "$target" "${_ARGS[@]}"
+    handle-result "$?" "$target" "${_ARGS[@]}"
     exit "$?"
 }
 
