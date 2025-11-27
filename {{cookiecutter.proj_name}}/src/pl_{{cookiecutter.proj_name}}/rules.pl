@@ -1,4 +1,4 @@
-#!/usr/bin/env swipl
+% rules.pl -*- mode: Prolog -*-
 % %-- rules
 
 getPairedPerson(X, Y) :- person(X),

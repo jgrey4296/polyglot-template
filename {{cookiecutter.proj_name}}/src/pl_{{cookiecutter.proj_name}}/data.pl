@@ -1,4 +1,4 @@
-#!/usr/bin/env swipl
+% data.pl -*- mode: Prolog -*-
 
 %% people
 person(bob).

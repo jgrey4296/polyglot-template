@@ -1,4 +1,4 @@
-#!/usr/bin/env swipl
+#!/usr/bin/env -S swipl
 %% -t halt : stops entering the repl
 %% from https://stackoverflow.com/questions/25467090
 
@@ -16,7 +16,7 @@ main :-
     likes(X, Y),
     format("Got: ~q~n", Argv),
     format("Result: ~q likes ~q in ~q~n", [X, Y, Argv]),
-    halt().
+    halt(0).
 
 main :-
     format("Call with a location: london/cairo/ny.~n"),
