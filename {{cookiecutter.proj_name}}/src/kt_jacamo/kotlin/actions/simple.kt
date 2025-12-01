@@ -3,9 +3,10 @@
 
 package jg.actions
 
-import jason.asSemantics as JsSem
-import jason.asSyntax as JsSyn
-import kotlin.text
+import jason.asSemantics.DefaultInternalAction
+import jason.asSemantics.TransitionSystem
+import jason.asSemantics.Unifier
+import jason.asSyntax.Term
 
 public class SimpleAction : DefaultInternalAction() {
     val subspendIntention   = false

@@ -35,9 +35,9 @@ plugins {
     // id("org.jetbrains.dokka").version("2.1.0")
 
     // Android
-    id("com.android.application").version("8.12.3")
-    id("com.android.library").version("8.12.3")
-    id("org.jetbrains.kotlin.android").version("2.0.21")
+    // id("com.android.application").version("8.12.3")
+    // id("com.android.library").version("8.12.3")
+    // id("org.jetbrains.kotlin.android").version("2.0.21")
 }
 
 ////-- end plugins

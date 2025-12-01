@@ -1,10 +1,12 @@
-// jg.kt -*- mode: Kotlin -*-
+// jg.kt -*- mode: kotlin-ts -*-
 @file:JvmName("counter")
 
-package artifacts
+package jg.artifacts
 
-import kotlin.text
-import cartago
+import cartago.Artifact
+import cartago.ObsProperty
+import cartago.OpFeedbackParam
+import cartago.OPERATION
 
 public class JGCounter : Artifact() {
 

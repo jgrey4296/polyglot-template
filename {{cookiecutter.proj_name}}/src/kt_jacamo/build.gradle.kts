@@ -24,8 +24,9 @@ import java.io.ByteArrayOutputStream
 import org.jetbrains.dokka.gradle.tasks.DokkaGenerateTask
 ////-- end imports
 
-val buildDir           = layout.buildDirectory
-val projDir            = layout.projectDirectory
+val buildDir  = layout.buildDirectory
+val projDir   = layout.projectDirectory
+val polyTemp  = Project.file(System.getenv("POLYGLOT_TEMP"))
 
 ////-- plugins
 repositories {
@@ -48,7 +49,7 @@ plugins {
 ////-- toolchains
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(24))
     }
 
     // withJavadocJar()
@@ -115,7 +116,8 @@ configurations {
 ////-- dependencies
 
 dependencies {
-    implementation("org.jacamo:jacamo:1.2")
+    implementation("org.jacamo:jacamo:1.3")
+    implementation("io.github.jason-lang:jason-interpreter:3.3.1")
 }
 
 ////-- end dependencies
@@ -137,7 +139,6 @@ layout.buildDirectory  = rootProject.layout.buildDirectory.dir("jacamo")
 
 val proj_name   = "{{cookiecutter.proj_name}}"
 val jcm_file    = "{{cookiecutter.proj_name}}.jcm"
-val proj_path   = File(".")
 val log_props   = "_configs/logging.properties"
 val log_dir     = buildDir.dir("logs")
 val launcher    = "jacamo.infra.JaCaMoLauncher"
@@ -169,7 +170,7 @@ tasks.register<JavaExec>("buildJCMDeps") {
     mainClass = launcher
     classpath = sourceSets.main.get().runtimeClasspath
 
-    args(proj_path.file(jcm_file), "--deps")
+    args(projDir.file(jcm_file), "--deps")
 
 }
 
@@ -277,14 +278,13 @@ tasks.register("jcmTests") {
 }
 
 tasks.test {
-    finalizedBy("testJaCaMo")
+    // finalizedBy("jcmTests")
 }
 
 // Doc --------------------------------------------------
 
 tasks.withType<DokkaGenerateTask>().configureEach {
-    temp = Project.file(System.getenv("POLYGLOT_TEMP"))
-    outputDirectory = temp..dir("docs/kotlin")
+    outputDirectory = polyTemp.dir("docs/kotlin")
     // outputDirectory = rootProject.layout.buildDirectory.dir("docs/kotlin")
 }
 

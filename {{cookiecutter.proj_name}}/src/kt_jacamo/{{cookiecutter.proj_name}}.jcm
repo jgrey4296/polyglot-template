@@ -10,7 +10,7 @@
     (see jacamo/doc/jcm.html for more information about what can be defined in
     this file)
 
-    JaCaMo 1.2
+    JaCaMo 1.3
 */
 
 mas {{cookiecutter.proj_name}} {
@@ -29,8 +29,8 @@ mas {{cookiecutter.proj_name}} {
     }   
 
     workspace w {
-      artifact c1: artifacts.Counter(3)
-      artifact c2: artifacts.JGCounter(3)
+      artifact c1: jg.artifacts.JGCounter(3)
+      artifact c2: jg.artifacts.JGCounter(3)
     }
 
     organisation o: org.xml {

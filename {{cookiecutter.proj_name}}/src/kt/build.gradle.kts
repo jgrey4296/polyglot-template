@@ -24,8 +24,9 @@ import java.io.ByteArrayOutputStream
 import org.jetbrains.dokka.gradle.tasks.DokkaGenerateTask
 ////-- end imports
 
-val buildDir           = layout.buildDirectory
-val projDir            = layout.projectDirectory
+val buildDir  = layout.buildDirectory
+val projDir   = layout.projectDirectory
+val polyTemp  = project.file(System.getenv("POLYGLOT_TEMP"))
 
 ////-- plugins
 repositories {
@@ -51,7 +52,7 @@ plugins {
 ////-- toolchains
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(24))
     }
 
     // withJavadocJar()
@@ -126,7 +127,6 @@ version         = "1.0"
 layout.buildDirectory  = rootProject.layout.buildDirectory.dir("kotlin")
 
 val proj_name   = "{{cookiecutter.proj_name}}"
-val proj_path   = File(".")
 val log_props   = "_configs/logging.properties"
 val log_dir     = buildDir.dir("logs")
 val launcher    = "MainKt"
@@ -204,12 +204,7 @@ tasks.test {
 // Doc --------------------------------------------------
 
 tasks.withType<DokkaGenerateTask>().configureEach {
-    val root = Project.file(System.getenv("POLYGLOT_ROOT"))
-    val temp = Project.file(System.getenv("POLYGLOT_ROOT"))
-    outputDirectory = temp.dir("docs/kotlin")
-    // outputDirectory = rootProject.layout.buildDirectory.dir("docs/kotlin")
-    // outputDirectory = layout.settingsDirectory.dir(".temp/docs/kotlin")
-    // outputDirectory = layout.buildDirectory.dir("../docs/dokka-b")
+    outputDirectory = polyTemp.resolve("docs/kotlin")
 }
 
 // jason.util.asl2dot

@@ -5,11 +5,12 @@ rootProject.name = "{{cookiecutter.proj_name}}"
 
 // path separator ':'
 include(":kt_basic")
+include(":kt_jacamo")
 
-project(":kt_basic").projectDir = File("src/kt")
-project(":kt_jacamo").projectDir = File("src/kt_jacamo")
+project(":kt_basic").projectDir   = File("src/kt")
+project(":kt_jacamo").projectDir  = File("src/kt_jacamo")
 
-buildcache {
+buildCache {
     local {
         directory = File(rootDir, ".temp/gradle-cache/local")
     }
