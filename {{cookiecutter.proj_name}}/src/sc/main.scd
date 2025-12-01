@@ -1,22 +1,69 @@
-//  {{cookiecutter.proj_name}}.scd -*- mode: sclang -*-
+//  blah.scd -*- mode: sclang -*-
 //  Summary:
 //
 //  Tags:
 //
-"--- Init Block".postln;
-f = { |val|
-	var result;
-	result = "Second Example function, arg value: "  + val;
-	result.postln;
-	result
+~mainfn = {
+	"---- Running Main ----".postln;
+	~pathCheck.();
+	~varCheck.();
+	~scriptLoad.();
+	~classTest.();
+	~pwdCheck.();
+	~envCheck.();
+	"---- Quitting ----".postln;
+	0.exit;
 };
 
-"----".postln;
+~pathCheck = {
+	"--- Path Check ---".postln;
+	LanguageConfig.includePaths.postln;
+
+	"--- Path Check ---".postln;
+};
+
+~varCheck = {
+	var blah = "bloo";
+	"--- Var Check ---".postln;
+	blah.postln;
+	"--- Var Check ---".postln;
+};
+
+~scriptLoad = {
+	"--- Load Script ---".postln;
+	"src/basic.sc".loadRelative;
+	"--- Load Script ---".postln;
+};
+
+~classTest = {
+	var aClass;
+	"--- Class test ---".postln;
+	aClass = Basic.new;
+	aClass.run;
+	"--- Class test ---".postln;
+};
+
+~pwdCheck = {
+	"--pwd--".postln;
+	"pwd".unixCmdGetStdOut.postln;
+	"--pwd--".postln;
+};
+
+~envCheck = {
+	"--env--".postln;
+	"POLYGLOT_ROOT".getenv.postln;
+	"--env--".postln;
+};
 
 
-"---- Run Block: ".postln;
-f.value("aweg");
-f.value("another");
-f.value("one more");
-
-"----".postln;
+(
+StartUp.add({ ~mainfn.value });
+// "---Recompiling---".postln;
+// LanguageConfig.addIncludePath("./classes".resolveRelative);
+// LanguageConfig.store;
+// thisProcess.recompile;
+// "---Finished Recompiling---".postln;
+// StartUp.add({ thisProcess.recompile });
+StartUp.run;
+);
+Platform.userConfigDir
