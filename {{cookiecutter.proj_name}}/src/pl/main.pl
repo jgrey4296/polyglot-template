@@ -4,10 +4,11 @@
 
 %% Setup:
 %% :- set_prolog_flag(verbose, silent).
-:- initialization main.
 %% Load other files:
 :- use_module(src/rules).
 :- [data/basic].
+%% Set the program entry point:
+:- initialization(main).
 
 main :-
     current_prolog_flag(argv, [Argv|_]),

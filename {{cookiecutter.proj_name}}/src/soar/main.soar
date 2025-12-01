@@ -1,5 +1,5 @@
 # project.soar -*- mode: soar -*-
-# Run with: soar -s project.soar [run {count}]
+# Run with: soar -s main.soar [run {count}]
 
 echo \n -- Setup
 stop
