@@ -67,7 +67,8 @@ extlinks : dict[str, tuple[str, str]]
 
 from os import environ
 
-_target = pl.Path(environ["POLYGLOT_ROOT"])
+_proj_root  = pl.Path(environ["POLYGLOT_ROOT"])
+_target     = _proj_root / "pyproject.toml"
 assert(_target.exists())
 pyproject  = tomllib.loads(_target.read_text())
 
@@ -414,7 +415,7 @@ intersphinx_timeout      = None
 
 ##-- graphviz
 # https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html
-# extensions.append("sphinx.ext.graphviz")
+extensions.append("sphinx.ext.graphviz")
 # Command name to invoke dot:
 graphviz_dot            =  "dot"
 graphviz_dot_args       = ()
@@ -424,7 +425,8 @@ graphviz_output_format  = "svg"  # or "dot"
 
 ##-- plantuml
 # https://github.com/sphinx-contrib/plantuml/
-# extensions.append("sphinxcontrib.plantuml")
+extensions.append("sphinxcontrib.plantuml")
+plantuml_output_format = "svg"
 
 ##-- end plantuml
 

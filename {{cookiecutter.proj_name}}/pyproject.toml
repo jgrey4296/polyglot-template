@@ -30,6 +30,7 @@ dev = [
     "jgdv>=1.3.2",
     "mypy>=1.17.1",
     "towncrier>=25.8.0",
+    "sympy>=1.14.0",
 ]
 test = [
     "pydot>=4.0.1",
@@ -50,7 +51,7 @@ docs = [
     "tox-uv>=1.27.0",
     "sphinxcontrib-plantuml>=0.31",
     "sphinx-bib-domain>=0.1.0",
-    "python-statemachine",   
+    "python-statemachine>=2.5.0",   
 ]
 
 # https://docs.astral.sh/uv/concepts/configuration-files/
@@ -60,6 +61,7 @@ docs = [
 [tool.uv.sources]
 # dep-name = {workspace=true}
 {{cookiecutter.proj_name}}_bridge_py_rs = {workspace=true}
+{{cookiecutter.proj_name}}_lib          = {workspace=true}
 
 [tool.uv.workspace]
 members = ["src/py_*"]
@@ -92,8 +94,9 @@ changelog     = "https://github.com//{{cookiecutter.proj_name}}/blob/master/CHAN
 [build-system]
 requires         = ["uv_build>=0.8.15,<0.9.0"]
 build-backend    = "uv_build"
-# requires      = ["maturin>=1.7,<2.0"]
-# build-backend = "maturin"
+directory        = ".temp/python"
+# requires       = ["maturin>=1.7,<2.0"]
+# build-backend  = "maturin"
 # requires       = ["hatchling>=1.13"]
 # build-backend  = "hatchling.build"
 
