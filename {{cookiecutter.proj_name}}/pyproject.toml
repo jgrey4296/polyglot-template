@@ -50,6 +50,7 @@ docs = [
     "tox-uv>=1.27.0",
     "sphinxcontrib-plantuml>=0.31",
     "sphinx-bib-domain>=0.1.0",
+    "python-statemachine",   
 ]
 
 # https://docs.astral.sh/uv/concepts/configuration-files/

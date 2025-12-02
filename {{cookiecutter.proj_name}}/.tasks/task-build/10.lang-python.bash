@@ -41,6 +41,7 @@ function main () {
     header "($HOOK_NUM): $fname.\n* Args: " "$@"
 
     fail "TODO: hook implementation"
+    uv --out-dir "$POLYGLOT_TEMP/build/python" build
 }
 
 main "$@"
