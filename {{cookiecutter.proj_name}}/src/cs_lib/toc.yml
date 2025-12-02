@@ -5,5 +5,5 @@
 #  
 
 items:
-  - name: {{cookiecutter.proj_name}}
+  - name: {{cookiecutter.proj_name}} CSharp Library
     href: index.md

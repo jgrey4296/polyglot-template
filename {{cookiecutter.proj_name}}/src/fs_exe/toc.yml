@@ -5,5 +5,5 @@
 #  
 
 items:
-  - name: {{cookiecutter.proj_name}} CSharp Executable
+  - name: {{cookiecutter.proj_name}} FSharp Executable
     href: index.md

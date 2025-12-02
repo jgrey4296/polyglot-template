@@ -8,7 +8,7 @@
         {
           "src": ".",
           "files": [
-            "src/cs_**/*.csproj",
+            "src/cs_*/*.csproj",
             ".temp/dotnet/bin/Release/**.dll"
           ]
         }
@@ -26,7 +26,10 @@
       },
       {
         "src": "src",
-        "files": ["cs_*/**/*.{md,yml}"],
+        "files": [
+          "cs_*/*.{md,yml}"
+          "cs_*/**/*.{md,yml}"
+        ],
         "dest": "."
       },
       {

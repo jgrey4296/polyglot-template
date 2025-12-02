@@ -7,7 +7,11 @@ items:
     href: getting-started.md
   - name: contents
     items:
-      - name: proj1
-        href: ../cs_{{cookiecutter.proj_name}}_exe/
+      - name: CSharp Executable
+        href: ../cs_exe/
+      - name: FSharp Executable
+        href: ../fs_exe/
+      - name: CSharp Library
+        href: ../cs_lib/
       - name: API
         href: ../../.temp/dotnet/api/
