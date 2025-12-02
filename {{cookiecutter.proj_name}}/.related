@@ -39,3 +39,4 @@
 :el-bridge     : src/rs_bridge_el
 :jacamo        : src/kt_jacamo
 :kotlin        : src/kt
+:util          : src/_utilities
