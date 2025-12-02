@@ -44,7 +44,7 @@ function main () {
 
     fname=$(basename "${BASH_SOURCE[0]}")
     header "($HOOK_NUM): $fname.\n* Args: " "$@"
-
+    check
     subhead "[dotnet] Running docfx"
     docfx "$POLYGLOT_ROOT/docfx.json"
 }

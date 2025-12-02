@@ -17,8 +17,8 @@ if [[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]]; then
 fi
 
 function check () {
-    if [[ ! -e "$SPHINX_CONF_DIR/conf.py" ]]; then
-        fail "NOT FOUND: $SPHINX_CONF_DIR/conf.py"
+    if [[ ! -e "$POLYGLOT_SPHINX_CONF_DIR/conf.py" ]]; then
+        fail "NOT FOUND: $POLYGLOT_SPHINX_CONF_DIR/conf.py"
     fi
 }
 
@@ -47,9 +47,9 @@ function main () {
     fname=$(basename "${BASH_SOURCE[0]}")
     header "($HOOK_NUM): $fname.\n* Args: " "$@"
     subhead "[python] Building Sphinx"
-    echo "- config location: ${SPHINX_CONF_DIR}"
+    echo "- config location: ${POLYGLOT_SPHINX_CONF_DIR}"
     echo "- out location: ${SPHINX_OUT}"
-    echo "- builder: ${SPHINX_BUILDER}"
+    echo "- builder: ${SPHINX_BUILDER:-html}"
     echo ""
 
     check
@@ -60,10 +60,10 @@ function main () {
         --verbose \
         --write-all \
         --fresh-env \
-        --conf-dir "$SPHINX_CONF_DIR" \
+        --conf-dir "$POLYGLOT_SPHINX_CONF_DIR" \
         --doctree-dir "$SPHINX_OUT/.doctrees" \
         --warning-file "$LOG_DIR/sphinx.log" \
-        --builder "$SPHINX_BUILDER" \
+        --builder "${SPHINX_BUILDER:-html}" \
         "$SRC_DIR" \
         "$SPHINX_OUT"
         # || fail "Sphinx Failed"
