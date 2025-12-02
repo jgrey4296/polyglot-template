@@ -4,7 +4,7 @@
 [workspace]
 resolver         = "3"
 members          = ["src/rs_*", "src/py_rs"]
-default-members  = ["src/rs_bin", "src/rs_lib"]
+default-members  = ["src/rs_exe", "src/rs_lib"]
 exclude          = [
     "src/_*",
     "src/_docs",
