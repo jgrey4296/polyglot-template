@@ -126,9 +126,10 @@ publishing {
 version         = "1.0"
 layout.buildDirectory  = rootProject.layout.buildDirectory.dir("kotlin")
 
-val proj_name   = "{{cookiecutter.proj_name}}"
+// val proj_name   = "{{cookiecutter.proj_name}}"
+val proj_name = project.name
 val log_props   = "_configs/logging.properties"
-val log_dir     = buildDir.dir("logs")
+val log_dir     = buildDir.dir("logs/${proj_name}")
 val launcher    = "MainKt"
 
 
@@ -155,7 +156,7 @@ tasks.register<JavaExec>("run") {
 tasks.jar {
     dependsOn(configurations.runtimeClasspath)
     duplicatesStrategy  = DuplicatesStrategy.EXCLUDE
-    archiveBaseName     = project.name
+    archiveBaseName     = proj_name
 
     manifest {
         attributes(
@@ -204,7 +205,7 @@ tasks.test {
 // Doc --------------------------------------------------
 
 tasks.withType<DokkaGenerateTask>().configureEach {
-    outputDirectory = polyTemp.resolve("docs/kotlin")
+    outputDirectory = polyTemp.resolve("docs/kotlin/${proj_name}")
 }
 
 // jason.util.asl2dot

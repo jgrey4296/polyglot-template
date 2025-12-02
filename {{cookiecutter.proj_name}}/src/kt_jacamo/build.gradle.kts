@@ -137,7 +137,8 @@ version         = "1.0"
 group           = "org.jacamo"
 layout.buildDirectory  = rootProject.layout.buildDirectory.dir("jacamo")
 
-val proj_name   = "{{cookiecutter.proj_name}}"
+// val proj_name   = "{{cookiecutter.proj_name}}"
+val proj_name   = project.name
 val jcm_file    = "{{cookiecutter.proj_name}}.jcm"
 val log_props   = "_configs/logging.properties"
 val log_dir     = buildDir.dir("logs")
@@ -177,7 +178,7 @@ tasks.register<JavaExec>("buildJCMDeps") {
 tasks.jar {
     dependsOn(configurations.runtimeClasspath)
     duplicatesStrategy  = DuplicatesStrategy.EXCLUDE
-    archiveBaseName     = project.name
+    archiveBaseName     = proj_name
 
     manifest {
         attributes(
@@ -284,8 +285,7 @@ tasks.test {
 // Doc --------------------------------------------------
 
 tasks.withType<DokkaGenerateTask>().configureEach {
-    outputDirectory = polyTemp.dir("docs/kotlin")
-    // outputDirectory = rootProject.layout.buildDirectory.dir("docs/kotlin")
+    outputDirectory = polyTemp.dir("docs/kotlin/${proj_name}")
 }
 
 // jason.util.asl2dot

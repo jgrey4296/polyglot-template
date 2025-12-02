@@ -1,11 +1,11 @@
 // //  Counter.java -*- mode: Java//l -*-
 // CArtAgO artifact code for project console_example
 
-package artifacts;
+package jg.artifacts;
 
 import cartago.*;
 
-public class Counter extends Artifact {
+public class JGJavaCounter extends Artifact {
 	void init(int initialValue) {
 		System.out.println("Initialising Java Counter");
 		defineObsProperty("count", initialValue);

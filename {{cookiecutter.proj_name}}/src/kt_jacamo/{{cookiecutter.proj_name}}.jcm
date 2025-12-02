@@ -29,7 +29,7 @@ mas {{cookiecutter.proj_name}} {
     }   
 
     workspace w {
-      artifact c1: jg.artifacts.JGCounter(3)
+      artifact c1: jg.artifacts.JGJavaCounter(3)
       artifact c2: jg.artifacts.JGCounter(3)
     }
 
