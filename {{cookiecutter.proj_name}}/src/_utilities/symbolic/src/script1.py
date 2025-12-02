@@ -3,29 +3,9 @@
 
 
 """
-# ruff: noqa:
-
-# Imports:
+# ruff.ignore.in.file
 from __future__ import annotations
-
-# ##-- stdlib imports
-import datetime
-import enum
-import functools as ftz
-import itertools as itz
 import logging as logmod
-import pathlib as pl
-import re
-import time
-import collections
-import contextlib
-import hashlib
-from copy import deepcopy
-from uuid import UUID, uuid1
-from weakref import ref
-import atexit # for @atexit.register
-import faulthandler
-# ##-- end stdlib imports
 
 # ##-- types
 # isort: off
@@ -52,7 +32,6 @@ if typing.TYPE_CHECKING:
     from collections.abc import Sequence, Mapping, MutableMapping, Hashable
 
     from jgdv import Maybe
-    from statemachine import StateMachine
 ## isort: on
 # ##-- end type checking
 
@@ -60,13 +39,24 @@ if typing.TYPE_CHECKING:
 logging = logmod.getLogger(__name__)
 ##-- end logging
 
+import math
+import sympy
 # Vars:
 
 # Body:
 
-def write_fsm(fsm:type[StateMachine]) -> None:
-    fsm       = fsm()
-    fsm_name  = type(fsm).__name__
-    text      = fsm._graph().to_string()
-    target    = pl.Path(__file__).parent / "dots" / f"{fsm_name}.dot"
-    target.write_text(text)
+val = sympy.sqrt(8)
+print(f"Symbolic sqrt: {val}")
+x, y = sympy.symbols('x y')
+expr = x - 2*y + 4
+print(f"Expr: {expr}")
+basic = x * expr
+print(f"Basic {basic}")
+expanded = sympy.expand(x*expr)
+print(f"Expanded: {expanded}")
+factored =  sympy.factor(expanded)
+print(f"Factored: {factored}")
+derive_y = sympy.diff(basic, y)
+derive_x = sympy.diff(basic, x)
+print(f"Derivative basic/dy: {derive_y}")
+print(f"Derivative basic/dx: {derive_x}")

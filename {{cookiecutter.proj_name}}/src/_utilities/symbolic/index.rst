@@ -1,10 +1,10 @@
 .. -*- mode: ReST -*-
 
-.. _simple:
+.. _symbolic:
 
-==================
-Simple Sphinx File
-==================
+=============
+Symbolic Math Utility
+=============
 
 .. contents:: Contents
    :local:
