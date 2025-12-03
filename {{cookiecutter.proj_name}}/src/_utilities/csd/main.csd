@@ -9,19 +9,18 @@
 ;; --realtime
 </CsOptions>
 <CsInstruments>
+#include "opcodes/example.op"
+#include "instruments/example.inst"
+
 sr      = 48000
 ksmps   = 64
 nchnls  = 2
 0dbfs   = 1
 
-instr Hello
-  aSine = poscil:a(0.2, p4)
-  outall(aSine)  
-endin
 
 </CsInstruments>
 <CsScore>
-i "Hello" 0 2 400
-i "Hello" 2 2 500
+i "JGInst" 0 2 400
+i "JGInst" 2 2 500
 </CsScore>
 </CsoundSynthesizer>
