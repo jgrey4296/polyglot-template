@@ -26,6 +26,7 @@ tortor.  Nam euismod tellus id erat.
    :hidden:
 
    [a-z]*/index
+   _ai_and_logic/*
    _utilities/*
    _sphinx/*
    genindex

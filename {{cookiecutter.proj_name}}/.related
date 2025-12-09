@@ -40,3 +40,5 @@
 :jacamo        : src/kt_jacamo
 :kotlin        : src/kt
 :util          : src/_utilities
+:logic         : src/_ai_and_logic
+:music         : src/_music

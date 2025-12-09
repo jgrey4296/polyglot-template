@@ -64,20 +64,8 @@ docs = [
 {{cookiecutter.proj_name}}_lib          = {workspace=true}
 
 [tool.uv.workspace]
-members = ["src/py_*"]
-exclude = [
-    "src/c_*",
-    "src/cs_*", 
-    "src/el_*",
-    "src/ex_*",
-    "src/gd_*",
-    "src/kt_*",
-    "src/rq_*",     
-    "src/rs_*",
-    "src/pl_*",
-    "src/_*",
-    "src/_docs"
-]
+members = ["src/py_*", "src/{{cookiecutter.proj_name}}"]
+exclude = []
 
 ##-- end dependencies
 
