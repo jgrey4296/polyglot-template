@@ -1,4 +1,4 @@
-<!--  opa.md -*- mode: gfm-mode -*-  -->
+<!--  rego.md -*- mode: gfm-mode -*-  -->
 <!--
 Summary:
 
