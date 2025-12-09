@@ -1,14 +1,14 @@
 #  mix.exs -*- mode: Elixir -*-
+# https://hexdocs.pm/elixir/library-guidelines.html
 
-
-defmodule Ex{{cookiecutter.proj_name}}.MixProject do
+defmodule ExLib{{cookiecutter.proj_name}}.MixProject do
   use Mix.Project
 
   def project do
     root_dir = System.fetch_env!("POLYGLOT_ROOT")
     temp_dir = System.fetch_env!("POLYGLOT_TEMP")
     [
-      app: :ex_{{cookiecutter.proj_name}},
+      app: :exlib_{{cookiecutter.proj_name}},
       version: "0.1.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,

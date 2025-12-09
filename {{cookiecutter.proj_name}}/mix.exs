@@ -7,7 +7,7 @@ defmodule {{cookiecutter.proj_name|title}}.MixProject do
 
   def project do
     [
-      apps: [:ex_{{cookiecutter.proj_name}}],
+      apps: [:ex_{{cookiecutter.proj_name}}, :exlib_{{cookiecutter.proj_name}}],
       version: "0.1.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
