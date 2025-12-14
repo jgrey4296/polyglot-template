@@ -1,0 +1,35 @@
+; test.clips -*- mode: Clips -*- 
+
+;;;======================================================
+;;; Ruleset:
+;;;
+;;;
+;;;
+;;;
+;;;======================================================
+
+(defmodule MAIN
+  (export deftemplate example)
+  )
+
+;;-- templates
+(deftemplate MAIN::example
+  (slot name (type STRING))
+  )
+
+;;-- end templates
+
+;;-- inital state
+(deffacts MAIN::initial-positions
+  (example (name "bob")
+           )
+  )
+;;-- end inital state
+
+;;-- rules
+(defrule MAIN::test-rule
+  ?node <- (example (name ?name))
+ =>
+  (retract ?node)
+  )
+;;-- end rules

@@ -1,7 +1,0 @@
-# Librarian-envs spec file
-lsp
-py-lsp
-mypy
-flycheck
-rs-lsp
-rs-flycheck
