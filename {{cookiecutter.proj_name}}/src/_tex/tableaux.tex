@@ -116,34 +116,6 @@ Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci comm
 %% --------------------------------------------------
 
 \pagebreak
-\section*{natded}
-
-Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
-
-
-
-\begin{figure}[hb]
-\[
-  \KMproof{
-    \cbblk{}{
-      \proofline{A}{}
-      \proofline{A \rightarrow B}{}
-    }
-    \cbblk{
-      \proofline{B}{}
-    }{
-      \proofline{A}{by 1}
-      \proofline{B}{by 1 and 2}
-    }
-    \proofline{Q}{}
-  }
-\]
-\caption{\label{eq:nd1}}
-\end{figure}
-
-%% --------------------------------------------------
-
-\pagebreak
 \section*{lplfitch}
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit
@@ -154,14 +126,15 @@ Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.
 Nam vestibulum accumsan nisl.
 
 \begin{figure}[hb]
-  \fitchprf{}{
-    \subproof{
-      \pline[1.]{A \rightarrow B}}
-    {
-      \pline[2.]{A} $ \\
-      \pline[3.]{B} $ \\
-    } \\
-    \pline[4.]{C} \\
+  \fitchprf{A}{
+    \subproof{\pline[1.]{A \rightarrow B}{blah}}{
+      \subproof{B}{
+        \pline[2.]{A}\\
+        \pline[3.]{B}
+      }
+      \pline{D}
+    }
+    \pline[4.]{C}
   }
   \centering
   \caption{\label{eq:lpl1}}
