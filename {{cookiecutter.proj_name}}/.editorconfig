@@ -40,8 +40,6 @@ csharp_style_namespace_declarations  = file_scoped
 
 [*.lp]
 
-[*.cs]
-
 [*.fs]
 
 [*.{ex,exs}]

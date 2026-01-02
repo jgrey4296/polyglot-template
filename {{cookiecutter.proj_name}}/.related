@@ -12,6 +12,7 @@
 
 ;; Dot Files and configs
 :related       : .related
+:env           : .envrc
 :tasks         : .tasks
 :polyglot      : .polyglot
 :github        : .github/workflows
