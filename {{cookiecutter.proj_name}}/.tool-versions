@@ -37,7 +37,7 @@ cocq            4.14.1
 cargo-show-asm  0.2.52
 isort           6.0.1
 mdbook          0.4.48
-sdkman          5.18.2
+;; sdkman          5.18.2
 version-manager 3.0.0
 csound          6.18
 graphviz        2.43.0

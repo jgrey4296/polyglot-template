@@ -3,7 +3,7 @@
   "edition": "2024",
   "channel": "1.88",
   "entry_point": "__main__",
-  "python": "3.14",
+  "python": "3.13",
   "_author": "me",
   "_copy_without_render": [
     "src/_data",

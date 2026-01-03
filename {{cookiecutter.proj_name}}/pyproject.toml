@@ -6,7 +6,7 @@ version         = "0.1.0"
 requires-python = ">={{cookiecutter.python}}"
 description     = ""
 readme          = "README.md"
-license         = {file = "LICENSE"}
+license         = {file="LICENSE"}
 keywords        = ["rust"]
 authors         = [
   {name  = "{{cookiecutter._author}}", email = "{{cookiecutter._email}}"},
@@ -64,7 +64,7 @@ docs = [
 {{cookiecutter.proj_name}}_lib          = {workspace=true}
 
 [tool.uv.workspace]
-members = ["src/py_*", "src/{{cookiecutter.proj_name}}"]
+members = ["src/py_*"]
 exclude = []
 
 ##-- end dependencies

@@ -2,13 +2,10 @@
 
 [project]
 name         = "{{cookiecutter.proj_name}}_bridge_py_rs"
-version      = "0.1.0"
 description  = "Python Submodule for {{cookiecutter.proj_name}} to handle rust interaction"
+version      = "0.1.0"
 readme       = {workspace = true}
-authors      = [
-    { name   = "John Grey", email = "johngrey4296@gmail.com" }
-]
-requires-python = ">=3.12"
+requires-python = ">={{cookiecutter.python}}"
 dependencies = []
 
 ##-- build system: maturin

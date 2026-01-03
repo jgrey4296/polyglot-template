@@ -2,7 +2,7 @@
 
 [package]
 name                     = "{{cookiecutter.proj_name}}_bridge_py_rs"
-description              = "a rust bridge to python for {{cookiecutter.proj_name}}"
+description              = "A rust bridge to python for {{cookiecutter.proj_name}}"
 version.workspace        = true
 edition.workspace        = true
 rust-version.workspace   = true

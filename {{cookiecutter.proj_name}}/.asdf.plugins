@@ -9,16 +9,20 @@ opam
 pandoc
 pre-commit
 racket
-ruby
 rust
 swiprolog
 uv
 yt-dlp
 
 polyglot        https://github.com/jgrey4296/asdf-polyglot-cli.git
+
+ceptre          https://github.com/jgrey4296/asdf-ceptre.git
+fstar           https://gitlab.com/jgrey4296/asdf-fstar.git
+ghidra          https://gitlab.com/jgrey4296/asdf-ghidra.git
+godot           https://github.com/jgrey4296/asdf-godot.git
+isabelle        https://gitlab.com/jgrey4296/asdf-isabelle.git
+opa             https://github.com/jgrey4296/asdf-opa.git
 plantuml	https://github.com/jgrey4296/asdf-plantuml.git
 soar		https://github.com/jgrey4296/asdf-soar.git
 texlive		https://github.com/jgrey4296/asdf-texlive.git
-godot           https://github.com/jgrey4296/asdf-godot.git
-opa             https://github.com/jgrey4296/asdf-opa.git
-ceptre          https://github.com/jgrey4296/asdf-ceptre.git
+tlaplus         https://gitlab.com/jgrey4296/asdf-tlaplus.git

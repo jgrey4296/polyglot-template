@@ -1,7 +1,7 @@
 [project]
 name             = "{{cookiecutter.proj_name}}_lib"
 version          = "0.1.0"
-description      = "Add your description here"
-readme           = "README.md"
+description      = "library module for {{cookiecutter.proj_name}}"
+readme           = {workspace=true}
 requires-python  = ">={{cookiecutter.python}}"
 dependencies     = []
