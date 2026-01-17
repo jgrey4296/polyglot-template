@@ -6,16 +6,15 @@ set -o pipefail
 
 # shellcheck disable=SC1091
 source "$POLY_SRC/lib/lib-util.bash"
-if [[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]]; then
-   # shellcheck disable=SC1091
-    source "$POLYGLOT_ROOT/.tasks/task-util.bash"
-fi
+# shellcheck disable=SC1091
+[[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]] && source "$POLYGLOT_ROOT/.tasks/task-util.bash"
 
 function init-workspace () {
   local IFS=";"
   local type="$1"
   local vals="$2"
-  local POLY_CTX=$(pushctx "${type}s")
+  local POLY_CTX
+  POLY_CTX=$(pushctx "${type}s")
   for key in $vals
   do
     POLYGLOT_SUPRESS_HEADER=1 polyglot add "$type" "$key"

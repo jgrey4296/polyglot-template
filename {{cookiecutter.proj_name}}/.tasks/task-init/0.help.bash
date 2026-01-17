@@ -6,9 +6,8 @@ set -o pipefail
 
 # shellcheck disable=SC1091
 source "$POLY_SRC/lib/lib-util.bash"
-if [[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]]; then
-    source "$POLYGLOT_ROOT/.tasks/task-util.bash"
-fi
+# shellcheck disable=SC1091
+[[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]] && source "$POLYGLOT_ROOT/.tasks/task-util.bash"
 
 function print-help () {
     # test args, if the last one is -h or --help
@@ -47,10 +46,7 @@ function check-environment () {
     tdot "check" "Checking Environment"
     has_failed=0
 
-    # if [[ -z "${BIBLIO_LIB:-}" ]]; then
-    #     has_failed=1
-    #     echo -e "!-- No BIBLIO_LIB has been defined"
-    # fi
+    # [[ -z "${BIBLIO_LIB:-}" ]] || { has_failed=$(( has_failed + 1 )); echo -e "!-- No BIBLIO_LIB has been defined" }
 
     [[ "$has_failed" = 0 ]] || fail "Missing EnvVars"
 }

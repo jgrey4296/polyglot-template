@@ -23,3 +23,7 @@ workflow:
 variables:
     JG_VAR: "My variable"
     
+null-job:
+    stage: build
+    script: |
+        echo "Null job"
