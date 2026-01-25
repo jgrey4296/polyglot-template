@@ -9,14 +9,7 @@ source "$POLY_SRC/lib/lib-util.bash"
 # shellcheck disable=SC1091
 [[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]] && source "$POLYGLOT_ROOT/.tasks/task-util.bash"
 
-function print-help () {
-    # test args, if the last one is -h or --help
-    # print help and exit
-    case "${@: -1}" in
-        -h|--help) ;;
-        *) return ;;
-    esac
-    echo -e "
+HELP_TEXT="
 usage: polyglot task init [args ...] [-h]
 
 Initialises the polyglot workspace.
@@ -39,8 +32,6 @@ options:
 
 
 "
-    exit "${PRINTED_HELP:-2}"
-}
 
 function check-environment () {
     tdot "check" "Checking Environment"
@@ -51,5 +42,5 @@ function check-environment () {
     [[ "$has_failed" = 0 ]] || fail "Missing EnvVars"
 }
 
-print-help "$@"
+print-help "$HELP_TEXT" 0 "$@"
 check-environment
