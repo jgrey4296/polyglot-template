@@ -23,8 +23,6 @@ function init-workspace () {
 
 POLY_CTX=$(pushctx "defaults")
 pctx "Installing defaults"
-init-workspace "tool" "asdf"
-echo ""
 init-workspace "lang" "$POLYGLOT_DEFAULT_LANGS"
 echo ""
 init-workspace "tool" "$POLYGLOT_DEFAULT_TOOLS"

@@ -26,9 +26,11 @@
 :tools         : .tool-versions
 
 ;; Docs
-:docs          : src/_docs
 :readme        : README.md
 :checklist     : checklist.md
+:changes       : src/__changes
+:notes         : src/__notes
+:book          : src/_
 
 ;; Source sublocs
 :src           : src
@@ -42,4 +44,5 @@
 :kotlin        : src/kt
 :util          : src/_utilities
 :logic         : src/_ai_and_logic
-:music         : src/_music
+:music         : src/_audio
+:audio         : src/_audio

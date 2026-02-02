@@ -1,6 +1,0 @@
-<!-- https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory -->
-<Project>
-    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" Condition="'' != $([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
-  <PropertyGroup>
-  </PropertyGroup>
-</Project>
