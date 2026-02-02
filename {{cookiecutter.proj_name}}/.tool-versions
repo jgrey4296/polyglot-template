@@ -1,45 +1,45 @@
-# .tool-versions
+# .tool-versions -*- mode: Conf[Space] -*- 
 # https://asdf-vm.com/manage/configuration.html#tool-versions
 # https://mise.jdx.dev/dev-tools/
-ceptre          prerelease
-deno            2.5.6
 direnv          2.37.1
-dotnet          9.0.305
-eask            0.11.8
-elixir          1.18.4-otp-26
-erlang          28.0.2
-git-cliff       2.4.0
-godot           4.5.1-stable
-ktlint          1.7.1
-ocaml           5.3.0
-opa             1.10.0
+polyglot        0.3.0
+deno            2.5.6
+dotnet          10.0.102
+git-cliff       1.4.0
+git-lfs         3.7.1
+rust            1.93.1
+uv              0.9.28
+sqlite         3.51.2
+pre-commit      4.5.1
 opam            2.4.1
-pandoc          3.8
-plantuml        1.2025.8
-polyglot        0.2.0
-pre-commit      4.3.0
-soar            9.6.4
-swiprolog       9.2.9
-texlive         2025
-uv              0.8.15
-yt-dlp          2025.09.26
-fstar           2025.12.15
-ghidra          Ghidra_12.0_build
-isabelle        2025
-rust            1.91.1
-shellcheck      0.11.0
-tlaplus         1.8.0
+# ceptre          prerelease
+# eask          0.12.4
+# elixir          1.18.4-otp-26
+# erlang          28.2
+# godot           4.6_mono
+# ktlint          1.7.1
+# ocaml           5.3.0
+# opa             1.10.0
+# pandoc          3.8
+# plantuml        1.2025.8
+# soar            9.6.4
+# swiprolog       9.2.9
+# texlive         2025
+# yt-dlp          2025.09.26
+# fstar           2025.12.15
+# ghidra          Ghidra_12.0_build
+# isabelle        2025
+# shellcheck      0.11.0
+# tlaplus         1.8.0
 
 
 # Extra, non-asdf
-docfx           3.78.3+850a61c2ecb83b0bda21448f1393e480934556fd
-cocq            4.14.1
-cargo-show-asm  0.2.52
-isort           6.0.1
-mdbook          0.4.48
-;; sdkman          5.18.2
-version-manager 3.0.0
-csound          6.18
-graphviz        2.43.0
-clips           6.30
+# docfx           3.78.3+850a61c2ecb83b0bda21448f1393e480934556fd
+# cocq            4.14.1
+# isort           6.0.1
+# mdbook          0.4.48
+# sdkman          5.18.2
+# csound          6.18
+# graphviz        2.43.0
+# clips           6.30
 #
