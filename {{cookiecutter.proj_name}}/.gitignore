@@ -18,6 +18,12 @@ log.*
 *-autoloads.el
 *-pkg.el
 
+# Rocq
+*.vo
+*.vos
+*.vok
+*.glob
+
 # Added by cargo
 /Cargo.lock
 
