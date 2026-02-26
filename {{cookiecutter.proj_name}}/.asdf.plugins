@@ -15,7 +15,7 @@ uv
 yt-dlp
 
 polyglot        https://github.com/jgrey4296/asdf-polyglot-cli.git
-
+eask		git@github.com:jgrey4296/asdf-eask.git
 ceptre          https://github.com/jgrey4296/asdf-ceptre.git
 fstar           https://gitlab.com/jgrey4296/asdf-fstar.git
 ghidra          https://gitlab.com/jgrey4296/asdf-ghidra.git

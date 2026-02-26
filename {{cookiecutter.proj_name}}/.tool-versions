@@ -3,20 +3,21 @@
 # https://mise.jdx.dev/dev-tools/
 direnv          2.37.1
 polyglot        0.3.0
-deno            2.5.6
-dotnet          10.0.102
 git-cliff       1.4.0
 git-lfs         3.7.1
 rust            1.91.1
 uv              0.9.28
-sqlite          3.51.2
 pre-commit      4.5.1
-opam            2.4.1
-plantuml        1.2025.8
-eask            0.12.4
-elixir          1.18.4-otp-26
-erlang          28.2
-texlive         2025
+
+# deno            2.5.6
+# dotnet          10.0.102
+# sqlite          3.51.2
+# opam            2.4.1
+# plantuml        1.2025.8
+# eask            0.12.9
+# elixir          1.18.4-otp-26
+# erlang          28.2
+# texlive         2025
 
 # ceptre          prerelease
 # godot           4.6_mono
