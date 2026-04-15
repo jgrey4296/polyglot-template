@@ -13,7 +13,7 @@
 ;; Dot Files and configs
 :related       : .related
 :env           : .envrc
-:tasks         : .tasks
+:tasks         : .polyglot
 :polyglot      : .polyglot
 :github        : .github/workflows
 :doot          : doot.toml

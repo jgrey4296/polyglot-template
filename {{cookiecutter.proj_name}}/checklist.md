@@ -26,22 +26,25 @@
     - [ ] templates
     - [ ] license
 - [ ] dot files
+    - [ ] envrc
     - [ ] related
     - [ ] tool-versions
-    - [ ] tox
     - [ ] pre-commit
-    - [ ] lenvs
     - [ ] rustfmt
-- [ ] rgignore
+    - [ ] asdf.plugins
+    - [ ] editorconfig
+    - [ ] gitignore
+    - [ ] gitattributes
+    - [ ] projectile
+    - [ ] rgignore
 - [ ] github
     - [ ] publish yaml
     - [ ] test yaml
     - [ ] asdf yaml
     - [ ] maturin CI yaml
-- [ ] scripts
-    - [ ] release script
-- [ ] related
+- [ ] gitlab
+    - [ ] gitlab-ci.yml
     - [ ] wiki
 - [ ] setup
     - [ ] cargo init-dotnet
-    - [ ] asdf tools 
+    - [ ] asdf tools

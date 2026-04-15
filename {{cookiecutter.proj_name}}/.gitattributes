@@ -1,5 +1,9 @@
-#  .gitattributes -*- mode: gitattributes -*- 
+#  .gitattributes -*- mode: gitattributes -*-
 * text=auto eol=lf
+
+# Export Ignores:
+# /blah export-ignore
+# /blah/bloo !export-ignore
 
 # Git LFS Tracking (Assets)
 # 3D Models

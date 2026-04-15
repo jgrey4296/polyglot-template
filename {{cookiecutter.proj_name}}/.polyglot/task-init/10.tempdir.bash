@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Stub shell script for a task hook.
-# Place in $root/.tasks/task-{name}/[0-9]+[a-z].{desc}.bash
+# Place in $root/.polyglot/task-{name}/[0-9]+[a-z].{desc}.bash
 # then make it executable with chmod +x
 # Return Codes:
 # - 0 : success
@@ -10,9 +10,9 @@ set -o nounset
 set -o pipefail
 
 # shellcheck disable=SC1091
-source "$POLY_SRC/lib/lib-util.bash"
+source "$POLY_SRC/lib/lib.bash"
 # shellcheck disable=SC1091
-[[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]] && source "$POLYGLOT_ROOT/.tasks/task-util.bash"
+[[ -e "$(poly-dir)/task-util.bash" ]] && source "$(poly-dir)/task-util.bash"
 
 pctx "tempdir" "Making $POLYGLOT_TEMP"
 mkdir -p "$POLYGLOT_TEMP"

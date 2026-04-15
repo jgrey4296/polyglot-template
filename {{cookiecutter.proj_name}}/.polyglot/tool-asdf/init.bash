@@ -5,9 +5,9 @@ set -o nounset
 set -o pipefail
 
 # shellcheck disable=SC1091
-source "$POLY_SRC/lib/lib-util.bash"
+source "$POLY_SRC/lib/lib.bash"
 # shellcheck disable=SC1091
-[[ -e "$POLYGLOT_ROOT/.tasks/task-util.bash" ]] && source "$POLYGLOT_ROOT/.tasks/task-util.bash"
+[[ -e "$(poly-dir)/task-util.bash" ]] && source "$(poly-dir)/task-util.bash"
 
 ASDF_PLUGIN_LIST="$POLYGLOT_ROOT/.asdf.plugins"
 

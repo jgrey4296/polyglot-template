@@ -19,18 +19,18 @@ repos:
       - id: conventional-commit-msg
         name: conventional-commit-msg
         language: python
-        entry: python .tasks/conventional-commit-msg.py
+        entry: python .polyglot/conventional-commit-msg.py
         stages: [commit-msg]
       - id : local.pre.hook.sh
         name: basic.local.sh
         language: system
-        entry: .tasks/local.pre.hook.sh
+        entry: .polyglot/local.pre.hook.sh
         stages: [post-commit]
         # files: ''
       - id: local.pre.hook.py
         name: local.pre.hook.py
         language: python
-        entry: python .tasks/local.pre.hook.py
+        entry: python .polyglot/local.pre.hook.py
         stages: [pre-commit]
         # files: ''
     # --------------------------------------------------
